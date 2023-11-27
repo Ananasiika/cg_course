@@ -10,18 +10,18 @@ CONFIG += c++11
 
 SOURCES += \
     drawer.cpp \
-    flamingo.cpp \
     light.cpp \
     main.cpp \
     mainwindow.cpp \
+    object.cpp \
     polygon.cpp \
     z_buffer.cpp
 
 HEADERS += \
     drawer.h \
-    flamingo.h \
     light.h \
     mainwindow.h \
+    object.h \
     polygon.h \
     z_buffer.h
 

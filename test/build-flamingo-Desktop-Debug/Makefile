@@ -53,17 +53,17 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../flamingo/drawer.cpp \
-		../flamingo/flamingo.cpp \
 		../flamingo/light.cpp \
 		../flamingo/main.cpp \
 		../flamingo/mainwindow.cpp \
+		../flamingo/object.cpp \
 		../flamingo/polygon.cpp \
 		../flamingo/z_buffer.cpp moc_mainwindow.cpp
 OBJECTS       = drawer.o \
-		flamingo.o \
 		light.o \
 		main.o \
 		mainwindow.o \
+		object.o \
 		polygon.o \
 		z_buffer.o \
 		moc_mainwindow.o
@@ -146,15 +146,15 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../flamingo/flamingo.pro ../flamingo/drawer.h \
-		../flamingo/flamingo.h \
 		../flamingo/light.h \
 		../flamingo/mainwindow.h \
+		../flamingo/object.h \
 		../flamingo/polygon.h \
 		../flamingo/z_buffer.h ../flamingo/drawer.cpp \
-		../flamingo/flamingo.cpp \
 		../flamingo/light.cpp \
 		../flamingo/main.cpp \
 		../flamingo/mainwindow.cpp \
+		../flamingo/object.cpp \
 		../flamingo/polygon.cpp \
 		../flamingo/z_buffer.cpp
 QMAKE_TARGET  = flamingo
@@ -342,8 +342,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../flamingo/drawer.h ../flamingo/flamingo.h ../flamingo/light.h ../flamingo/mainwindow.h ../flamingo/polygon.h ../flamingo/z_buffer.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../flamingo/drawer.cpp ../flamingo/flamingo.cpp ../flamingo/light.cpp ../flamingo/main.cpp ../flamingo/mainwindow.cpp ../flamingo/polygon.cpp ../flamingo/z_buffer.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../flamingo/drawer.h ../flamingo/light.h ../flamingo/mainwindow.h ../flamingo/object.h ../flamingo/polygon.h ../flamingo/z_buffer.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../flamingo/drawer.cpp ../flamingo/light.cpp ../flamingo/main.cpp ../flamingo/mainwindow.cpp ../flamingo/object.cpp ../flamingo/polygon.cpp ../flamingo/z_buffer.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../flamingo/mainwindow.ui $(DISTDIR)/
 
 
@@ -381,7 +381,7 @@ compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp
 moc_mainwindow.cpp: ../flamingo/mainwindow.h \
 		../flamingo/drawer.h \
-		../flamingo/flamingo.h \
+		../flamingo/object.h \
 		../flamingo/polygon.h \
 		../flamingo/light.h \
 		../flamingo/z_buffer.h \
@@ -411,22 +411,18 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 ####### Compile
 
 drawer.o: ../flamingo/drawer.cpp ../flamingo/drawer.h \
-		../flamingo/flamingo.h \
+		../flamingo/object.h \
 		../flamingo/polygon.h \
 		../flamingo/light.h \
 		../flamingo/z_buffer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o drawer.o ../flamingo/drawer.cpp
-
-flamingo.o: ../flamingo/flamingo.cpp ../flamingo/flamingo.h \
-		../flamingo/polygon.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o flamingo.o ../flamingo/flamingo.cpp
 
 light.o: ../flamingo/light.cpp ../flamingo/light.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o light.o ../flamingo/light.cpp
 
 main.o: ../flamingo/main.cpp ../flamingo/mainwindow.h \
 		../flamingo/drawer.h \
-		../flamingo/flamingo.h \
+		../flamingo/object.h \
 		../flamingo/polygon.h \
 		../flamingo/light.h \
 		../flamingo/z_buffer.h \
@@ -435,19 +431,23 @@ main.o: ../flamingo/main.cpp ../flamingo/mainwindow.h \
 
 mainwindow.o: ../flamingo/mainwindow.cpp ../flamingo/mainwindow.h \
 		../flamingo/drawer.h \
-		../flamingo/flamingo.h \
+		../flamingo/object.h \
 		../flamingo/polygon.h \
 		../flamingo/light.h \
 		../flamingo/z_buffer.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../flamingo/mainwindow.cpp
 
+object.o: ../flamingo/object.cpp ../flamingo/object.h \
+		../flamingo/polygon.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o object.o ../flamingo/object.cpp
+
 polygon.o: ../flamingo/polygon.cpp ../flamingo/polygon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o polygon.o ../flamingo/polygon.cpp
 
 z_buffer.o: ../flamingo/z_buffer.cpp ../flamingo/z_buffer.h \
 		../flamingo/light.h \
-		../flamingo/flamingo.h \
+		../flamingo/object.h \
 		../flamingo/polygon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o z_buffer.o ../flamingo/z_buffer.cpp
 

@@ -121,59 +121,39 @@ void putShadowPolygon(std::vector<std::vector<double>> &zb, std::vector<QVector3
         }
 }
 
-void putShadowBuffer(std::vector<std::vector<double>> &zb, std::vector<flamingo> &flamingos, light &ls)
+void putShadowBuffer(std::vector<std::vector<double>> &zb, std::vector<object> &objects, light &ls)
 {
-        for(size_t i = 0; i < flamingos.size(); i++)
+    for(size_t i = 0; i < objects.size(); i++)
+    {
+        std::vector<polygon> polygons = objects[i].get_polygons();
+        for (size_t j = 0; j < polygons.size(); j++)
         {
-                std::vector<polygon> polygons = flamingos[i].get_polygons();
-                for (size_t j = 0; j < polygons.size(); j++)
-                {
-                        QVector3D* pv = polygons[j].get_points();
-                        std::vector<QVector3D> pointsPolygon = {pv[0], pv[1], pv[2]};
-                        putShadowPolygon(zb, pointsPolygon, ls);
-                }
+            QVector3D* pv = polygons[j].get_points();
+            std::vector<QVector3D> pointsPolygon = {pv[0], pv[1], pv[2]};
+            putShadowPolygon(zb, pointsPolygon, ls);
         }
+    }
 }
 
 
-void z_buffer::reflect(std::vector<flamingo> &flamingos)
+void z_buffer::reflect(std::vector<object> &objects)
 {
-    for (size_t i = 0; i < flamingos.size() - 1; i++)
+    for (size_t o = objects.size() - 1; o >= 1; o--)
     {
-
-        std::vector<polygon> polygons = flamingos[i].get_polygons();
-
-        float min_y = std::numeric_limits<float>::min();
-        float min_x, min_z;
-
-        for (polygon &poly : polygons)
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                float y = poly.get_points()[i].y();
-                if (y > min_y)
-                {
-                    min_x = poly.get_points()[i].x();
-                    min_y = y;
-                    min_z = poly.get_points()[i].z();
-                }
-            }
-        }
-
-        std::vector<polygon> reflected_polygons;
-
-        QVector3D plane_normal(0, -1, 0);
-        QVector3D plane_point(min_x, min_y, min_z);
-
+        std::vector<polygon> polygons = objects[o].get_polygons();
+        float y_max = 0;
         for (polygon &poly : polygons)
         {
             std::vector<QVector3D> points = {poly.get_points()[0], poly.get_points()[1], poly.get_points()[2]};
-
-            for (int i = 0; i < 3; i++)
+            for (auto &p : points)
             {
-                QVector3D reflected_point = points[i] - (2 * QVector3D::dotProduct(points[i] - plane_point, plane_normal) * plane_normal);
-                points[i] = reflected_point;
+                if (p.z() < 0.5 && p.y() > y_max)
+                    y_max = p.y();
             }
+        }
+        for (polygon &poly : polygons)
+        {
+            std::vector<QVector3D> points = {poly.get_points()[0], poly.get_points()[1], poly.get_points()[2]};
 
             int ymax, ymin, xmax, xmin;
             ymax = ymin = points[0].y();
@@ -202,28 +182,29 @@ void z_buffer::reflect(std::vector<flamingo> &flamingos)
                 for (int j = ymin; j <= ymax; j++) {
                     if (isInside(i, j, points)) {
                         double z = calculateZ(i, j, coef);
-                        if (z > _buf[i][j].z) {
-                            _buf[i][j].z = z;
+                        if (z == _buf[i][j].z && ((_buf[i][j + 2 * (y_max - j)].z == 0 && o >= 2 && j + 2 * (y_max - j) < _sY) || (o == 1 && _buf[i][j + z * 2].z == 0)))
+                        {
                             QColor c = getColorCell(poly.get_points()[0].x(), poly.get_points()[0].y());
-                            c.setAlpha(200);
-                            _buf[i][j].c = c;
+                            c.setAlpha(100);
+                            if (o == 1)
+                                _buf[i][j + z * 2].c = c;
+                            else
+                                _buf[i][j + 2 * (y_max - j)].c = c;
                         }
                     }
                 }
-
         }
     }
 
-
 }
 
-void z_buffer::shadows_on_lake(std::vector<flamingo> &flamingos, std::vector<light> &ls)
+void z_buffer::shadows_on_lake(std::vector<object> &objects, std::vector<light> &ls)
 {
 
-    for (size_t i = 0; i < flamingos.size() - 1; i++)
+    for (size_t i = 1; i < objects.size(); i++)
     {
 
-        for (polygon& polygon_flam : flamingos[i].get_polygons())
+        for (polygon& polygon_flam : objects[i].get_polygons())
         {
             QVector3D *points = polygon_flam.get_points();
             std::vector<QVector3D> new_points;
@@ -269,30 +250,28 @@ void z_buffer::shadows_on_lake(std::vector<flamingo> &flamingos, std::vector<lig
     }
 }
 
-void z_buffer::put_flamingos(std::vector<flamingo> &flamingos, std::vector<light> &ls) {
-        std::vector<std::vector<std::vector<double>>> shadows;
-        std::vector<std::vector<double>> zb;
-        for(int i = 0; i < ls.size(); i++)
+void z_buffer::put_objects(std::vector<object> &objects, std::vector<light> &ls) {
+    std::vector<std::vector<std::vector<double>>> shadows;
+    std::vector<std::vector<double>> zb;
+    for(int i = 0; i < ls.size(); i++)
+    {
+        reset_zb(zb, _sX, _sY);
+        putShadowBuffer(zb, objects, ls[i]);
+        shadows.push_back(zb);
+    }
+
+    for (size_t i = 0; i < objects.size(); i++)
+    {
+        std::vector<polygon> polygons = objects[i].get_polygons();
+        for (size_t j = 0; j < polygons.size(); j++)
         {
-                reset_zb(zb, _sX, _sY);
-                putShadowBuffer(zb, flamingos, ls[i]);
-                shadows.push_back(zb);
+            QVector3D* pv = polygons[j].get_points();
+            std::vector<QVector3D> pointsPolygon = {pv[0], pv[1], pv[2]};
+            put_polygon(pointsPolygon, ls, polygons[j].get_color(), shadows);
         }
-
-        for (size_t i = 0; i < flamingos.size(); i++)
-        {
-                std::vector<polygon> polygons = flamingos[i].get_polygons();
-                for (size_t j = 0; j < polygons.size(); j++)
-                {
-                        QVector3D* pv = polygons[j].get_points();
-                        std::vector<QVector3D> pointsPolygon = {pv[0], pv[1], pv[2]};
-                        put_polygon(pointsPolygon, ls, polygons[j].get_color(), shadows);
-                }
-        }
-
-        //reflect(flamingos);
-        shadows_on_lake(flamingos, ls);
-
+    }
+    reflect(objects);
+    shadows_on_lake(objects, ls);
 }
 
 QColor z_buffer::getColorCell(int x, int y) { return _buf[x][y].c; }

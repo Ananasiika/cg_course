@@ -12,13 +12,16 @@ class polygon {
 public:
     polygon();
     polygon(const QVector3D &a, const QVector3D &b, const QVector3D &c);
+    polygon(const QVector3D &a, const QVector3D &b, const QVector3D &c, QColor &color, std::vector<int> num);
     polygon(const QVector3D &a, const QVector3D &b, const QVector3D &c, QColor &color);
 
     QVector3D * get_points();
+    std::vector<int> get_num();
     QColor get_color();
 
 private:
     QVector3D _points[SIZE];
+    std::vector<int> _num;
     QColor _c = QColor(120, 255, 150);
 };
 

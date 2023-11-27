@@ -2,7 +2,7 @@
 #define Z_BUFFER_H
 
 #include "light.h"
-#include "flamingo.h"
+#include "object.h"
 #include <QColor>
 #include <vector>
 #include "math.h"
@@ -24,17 +24,17 @@ public:
     QColor getColorCell(int x, int y);
     void setSize(size_t x, size_t y);
 
-    void put_flamingos(std::vector<flamingo> &flamingos, std::vector<light> &ls);
+    void put_objects(std::vector<object> &objects, std::vector<light> &ls);
     void put_polygon(std::vector<QVector3D> &points, std::vector<light> &ls,
                                     QColor c, std::vector<std::vector<std::vector<double>>> &shadows);
 
     void show(QPainter &painter);
-    void reflect(std::vector<flamingo> &flamingos);
-    void shadows_on_lake(std::vector<flamingo> &flamingos, std::vector<light> &ls);
+    void reflect(std::vector<object> &objects);
+    void shadows_on_lake(std::vector<object> &objects, std::vector<light> &ls);
 
 
 private:
-    int _sX, _sY;
+    int _sX, _sY, count_flamingo = 2;
     std::vector<std::vector<Cell>> _buf;
 };
 

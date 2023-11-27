@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "drawer.h"
 #include "light.h"
-#include "flamingo.h"
+#include "object.h"
 #include "ui_mainwindow.h"
 #include <iostream>
 #include <QFileDialog>
@@ -49,20 +49,19 @@ void MainWindow::on_pushButton_2_clicked()
 {
     s.set_size(ui->graphicsView->width() - 20, ui->graphicsView->height() - 20);
     flag = 1;
-    const char *c_str = "/home/larisa/cg_course/flamingo.obj";
-    for (int j = 0; j < 1; j += 1)
+    const char *c_str = "/home/larisa/cg_course/flamingo3.obj";
+    if (!s.load_file(c_str))
+        return;
+    s.delete_lights();
+    light ls = light({800, 500, 800}, 0.7);
+    s.add_light(ls);
+    for (int j = 0; j < 240; j += 1)
     {
-        s.delete_flamingos();
-        s.delete_lights();
+        s.delete_objects();
 
-        if (!s.load_file(c_str, j, j * 3 / 4 - 290, 1 - double(j) / 2 / ui->graphicsView->width()))
-            return;
+        s.add_flamingo(j, -490, 0.6 - double(j) / 2 / ui->graphicsView->width());
 
-        if (!s.load_file(c_str, j - 60, j * 3 / 4, 1 - double(j) / 2 / ui->graphicsView->width()))
-            return;
-
-        light ls = light({800, 500, 800}, 0.7);
-        s.add_light(ls);
+        s.add_flamingo(j - 120, -200, 0.6 - double(j) / 2 / ui->graphicsView->width());
         _image = s.draw();
         QPixmap pixmap = QPixmap::fromImage(*_image);
         ui->graphicsView->scene()->addPixmap(pixmap);
