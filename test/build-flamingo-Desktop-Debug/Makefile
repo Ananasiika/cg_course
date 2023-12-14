@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_QML_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../flamingo -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtOpenGL -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+INCPATH       = -I../flamingo -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = flamingo1.0.0
 DISTDIR = /home/larisa/cg_course/test/build-flamingo-Desktop-Debug/.tmp/flamingo1.0.0
 LINK          = g++
 LFLAGS        = 
-LIBS          = $(SUBLIBS) /usr/lib/x86_64-linux-gnu/libQt5OpenGL.so /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Core.so -lGL -lpthread   
+LIBS          = $(SUBLIBS) /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Core.so -lGL -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -57,15 +57,15 @@ SOURCES       = ../flamingo/drawer.cpp \
 		../flamingo/main.cpp \
 		../flamingo/mainwindow.cpp \
 		../flamingo/object.cpp \
-		../flamingo/polygon.cpp \
-		../flamingo/z_buffer.cpp moc_mainwindow.cpp
+		../flamingo/objects.cpp \
+		../flamingo/polygon.cpp moc_mainwindow.cpp
 OBJECTS       = drawer.o \
 		light.o \
 		main.o \
 		mainwindow.o \
 		object.o \
+		objects.o \
 		polygon.o \
-		z_buffer.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -149,14 +149,14 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../flamingo/light.h \
 		../flamingo/mainwindow.h \
 		../flamingo/object.h \
-		../flamingo/polygon.h \
-		../flamingo/z_buffer.h ../flamingo/drawer.cpp \
+		../flamingo/objects.h \
+		../flamingo/polygon.h ../flamingo/drawer.cpp \
 		../flamingo/light.cpp \
 		../flamingo/main.cpp \
 		../flamingo/mainwindow.cpp \
 		../flamingo/object.cpp \
-		../flamingo/polygon.cpp \
-		../flamingo/z_buffer.cpp
+		../flamingo/objects.cpp \
+		../flamingo/polygon.cpp
 QMAKE_TARGET  = flamingo
 DESTDIR       = 
 TARGET        = flamingo
@@ -342,8 +342,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../flamingo/drawer.h ../flamingo/light.h ../flamingo/mainwindow.h ../flamingo/object.h ../flamingo/polygon.h ../flamingo/z_buffer.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../flamingo/drawer.cpp ../flamingo/light.cpp ../flamingo/main.cpp ../flamingo/mainwindow.cpp ../flamingo/object.cpp ../flamingo/polygon.cpp ../flamingo/z_buffer.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../flamingo/drawer.h ../flamingo/light.h ../flamingo/mainwindow.h ../flamingo/object.h ../flamingo/objects.h ../flamingo/polygon.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../flamingo/drawer.cpp ../flamingo/light.cpp ../flamingo/main.cpp ../flamingo/mainwindow.cpp ../flamingo/object.cpp ../flamingo/objects.cpp ../flamingo/polygon.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../flamingo/mainwindow.ui $(DISTDIR)/
 
 
@@ -380,14 +380,14 @@ compiler_moc_header_make_all: moc_mainwindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp
 moc_mainwindow.cpp: ../flamingo/mainwindow.h \
-		../flamingo/drawer.h \
+		../flamingo/objects.h \
 		../flamingo/object.h \
 		../flamingo/polygon.h \
 		../flamingo/light.h \
-		../flamingo/z_buffer.h \
+		../flamingo/drawer.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/larisa/cg_course/test/build-flamingo-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/larisa/cg_course/test/flamingo -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtOpenGL -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../flamingo/mainwindow.h -o moc_mainwindow.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/larisa/cg_course/test/build-flamingo-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/larisa/cg_course/test/flamingo -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../flamingo/mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -411,30 +411,29 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 ####### Compile
 
 drawer.o: ../flamingo/drawer.cpp ../flamingo/drawer.h \
-		../flamingo/object.h \
-		../flamingo/polygon.h \
 		../flamingo/light.h \
-		../flamingo/z_buffer.h
+		../flamingo/object.h \
+		../flamingo/polygon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o drawer.o ../flamingo/drawer.cpp
 
 light.o: ../flamingo/light.cpp ../flamingo/light.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o light.o ../flamingo/light.cpp
 
 main.o: ../flamingo/main.cpp ../flamingo/mainwindow.h \
-		../flamingo/drawer.h \
+		../flamingo/objects.h \
 		../flamingo/object.h \
 		../flamingo/polygon.h \
 		../flamingo/light.h \
-		../flamingo/z_buffer.h \
+		../flamingo/drawer.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../flamingo/main.cpp
 
 mainwindow.o: ../flamingo/mainwindow.cpp ../flamingo/mainwindow.h \
-		../flamingo/drawer.h \
+		../flamingo/objects.h \
 		../flamingo/object.h \
 		../flamingo/polygon.h \
 		../flamingo/light.h \
-		../flamingo/z_buffer.h \
+		../flamingo/drawer.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../flamingo/mainwindow.cpp
 
@@ -442,14 +441,15 @@ object.o: ../flamingo/object.cpp ../flamingo/object.h \
 		../flamingo/polygon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o object.o ../flamingo/object.cpp
 
+objects.o: ../flamingo/objects.cpp ../flamingo/objects.h \
+		../flamingo/object.h \
+		../flamingo/polygon.h \
+		../flamingo/light.h \
+		../flamingo/drawer.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o objects.o ../flamingo/objects.cpp
+
 polygon.o: ../flamingo/polygon.cpp ../flamingo/polygon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o polygon.o ../flamingo/polygon.cpp
-
-z_buffer.o: ../flamingo/z_buffer.cpp ../flamingo/z_buffer.h \
-		../flamingo/light.h \
-		../flamingo/object.h \
-		../flamingo/polygon.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o z_buffer.o ../flamingo/z_buffer.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

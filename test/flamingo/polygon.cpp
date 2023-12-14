@@ -25,6 +25,16 @@ polygon::polygon(const QVector3D &a, const QVector3D &b, const QVector3D &c, QCo
 
 QVector3D * polygon::get_points() { return _points; }
 
+QVector3D *polygon::get_points() const {
+    return const_cast<QVector3D *>(_points);
+}
+
+QColor polygon::get_color() const {
+    return _c;
+}
+
+
+
 QColor polygon::get_color() {return _c;}
 
 std::vector<int> polygon::get_num() {return _num;}

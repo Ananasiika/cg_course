@@ -14,21 +14,20 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     object.cpp \
-    polygon.cpp \
-    z_buffer.cpp
+    objects.cpp \
+    polygon.cpp
 
 HEADERS += \
     drawer.h \
     light.h \
     mainwindow.h \
     object.h \
-    polygon.h \
-    z_buffer.h
+    objects.h \
+    polygon.h
 
 FORMS += \
     mainwindow.ui
   
-QT += opengl
 LIBS += -lGL
 
 # Default rules for deployment.

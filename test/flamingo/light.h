@@ -10,7 +10,9 @@ public:
     light(QVector3D pos, double intensity);
 
     QVector3D get_pos();
+    QVector3D get_pos() const;
     double get_intensity();
+    double get_intensity() const;
 
 private:
     QVector3D _pos;

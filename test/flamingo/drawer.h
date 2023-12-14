@@ -1,52 +1,55 @@
 #ifndef DRAWER_H
 #define DRAWER_H
 
-#include "object.h"
 #include "light.h"
-#include "z_buffer.h"
-#include <QImage>
-#include <QPainter>
-#include <QVector3D>
-#include <iostream>
-#include <fstream>
-#include <sstream>
+#include "object.h"
+#include <QColor>
+#include <vector>
+#include "math.h"
+#include <thread>
+#include <future>
+#include <stdlib.h>
 
-#define HEIGHT_SCREEN 800
-#define WIDTH_SCREEN 1200
-
-class drawer
-{
-public:
-  drawer();
-  drawer(std::vector<light> lights,
-         std::vector<object> objects, int canvas_height, int canvas_width);
-
-  std::vector<light> get_light();
-  void delete_objects();
-  void delete_lights();
-  void add_object(object &f);
-  void add_light(light &l);
-  void set_size(size_t width, size_t height);
-
-  bool load_file(const char *filename);
-  //bool load_file_flower(const char *filename);
-  void add_flamingo(float x, float y, double c);
-  //void add_flowers(int p);
-  std::vector<polygon> generate_lake();
-  std::vector<polygon> generate_plant(int p);
-  std::vector<polygon> reflect_polygons();
-
-  std::shared_ptr<QImage> draw();
-
-private:
-  std::vector<light> _lights;
-  std::vector<object> _objects;
-  object flamingo;
-  //object flower;
-  int count_flamingo;
-  int _canvas_height;
-  int _canvas_width;
-  z_buffer zb;
+struct Cell {
+    double z;
+    QColor c;
+    size_t obj;
 };
 
-#endif // DRAWER_H
+class drawer {
+public:
+    drawer(size_t x, size_t y);
+    drawer();
+    ~drawer();
+
+    size_t sX();
+    size_t sY();
+    QColor getColorCell(int x, int y);
+    void setSize(size_t x, size_t y);
+
+    void put_objects(std::vector<object> &objects, const std::vector<light> &ls);
+    void put_polygon(std::vector<QVector3D> &points, const std::vector<light> &ls,
+                                    QColor c, int obj);
+
+    void show(std::shared_ptr<QImage> &image);
+    void reflect(std::vector<object> &objects);
+    void shadows(std::vector<object> &objects, const std::vector<light> &ls);
+    std::tuple<int, int, int, int> border(std::vector<QVector3D> points);
+    void putShadowPolygon(std::vector<std::vector<double>> &zb, std::vector<QVector3D> &points, const light &ls);
+    void putShadowBuffer(std::vector<std::vector<double>> &zb, std::vector<object> &objects, const light &ls);
+    QColor calculateColor(int x, int y, double z, QVector3D N, const std::vector<light> ls, QColor c);
+    void reset_zb(std::vector<std::vector<double>> &zb);
+    void set_factors(double scat, double dif, double spec, double tran, double ref);
+
+
+private:
+    int f = 1;
+    int _sX, _sY, count_flamingo = 2;
+    std::vector<std::vector<std::vector<double>>> _shadows;
+    std::vector<std::vector<Cell>> _buf;
+    double _scat, _dif, _spec, _tran, _ref;
+};
+
+
+
+#endif // drawer_H

@@ -15,9 +15,11 @@ public:
     polygon(const QVector3D &a, const QVector3D &b, const QVector3D &c, QColor &color, std::vector<int> num);
     polygon(const QVector3D &a, const QVector3D &b, const QVector3D &c, QColor &color);
 
-    QVector3D * get_points();
+    QVector3D *get_points();
+    QVector3D *get_points() const;
     std::vector<int> get_num();
     QColor get_color();
+    QColor get_color() const;
 
 private:
     QVector3D _points[SIZE];

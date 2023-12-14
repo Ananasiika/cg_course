@@ -7,11 +7,69 @@
 \ifx\undefined\BibAnnote\long\def\BibAnnote#1{}\else\fi
 \ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
 
+\bibitem{kurov}
+\selectlanguageifdefined{english}
+\BibEmph{А.В.,~Куров}. Конспект лекций по
+  компьютерной графике~/ Куров~А.В. ---
+\newblock 2023.
+
 \bibitem{roders}
 \selectlanguageifdefined{russian}
 \BibEmph{Д.,~Роджерс}. Алгоритмические основы
   машинной графики.~/ Роджерс~Д. ---
 \newblock M.Мир, 1989. ---
 \newblock {С.}~512.
+
+\bibitem{refl}
+\selectlanguageifdefined{english}
+\BibEmph{В.А.,~Ярошевич}. Компьютерная графика~/
+  Ярошевич~В.А. ---
+\newblock М.: Издательство МИЭТ, 2015.
+
+\bibitem{angem}
+\selectlanguageifdefined{russian}
+\BibEmph{А. Н.~Канатников,~А. П.~Крищенко}.
+  Аналитическая геометрия: Учебник для
+  вузов~/ А. П.~Крищенко~А. Н.~Канатников. ---
+\newblock М.: Издательство МГТУ им. Н.Э. Баумана,
+  2019. ---
+\newblock {С.}~376.
+
+\bibitem{cpp}
+\selectlanguageifdefined{english}
+Документация языка С++ [Электронный ресурс].
+  ---
+\newblock Режим доступа:
+  \url{https://docs.microsoft.com/ru-ru/cpp/cpp/?view=msvc-170} (дата
+  обращения: 11.12.2023).
+
+\bibitem{qt}
+\selectlanguageifdefined{english}
+Документация библиотеки Qt [Электронный
+  ресурс]. ---
+\newblock Режим доступа: \url{https://doc.qt.io} (дата
+  обращения: 11.12.2023).
+
+\bibitem{gtest}
+\selectlanguageifdefined{english}
+Документация фреймворка GoogleTest
+  [Электронный ресурс]. ---
+\newblock Режим доступа: \url{https://google.github.io/googletest/}
+  (дата обращения: 11.12.2023).
+
+\bibitem{cpp-lang-chrono}
+\selectlanguageifdefined{english}
+Date and time utilities [Электронный ресурс]. ---
+\newblock Режим доступа:
+  \url{https://en.cppreference.com/w/cpp/chrono} (дата обращения:
+  11.12.2023).
+
+\bibitem{obj}
+\selectlanguageifdefined{english}
+Документация формата obj [Электронный
+  ресурс]. ---
+\newblock Режим доступа:
+  \url{https://docs.fileformat.com/ru/3d/obj/} (дата обращения:
+  11.12.2023).
 
 \end{thebibliography}

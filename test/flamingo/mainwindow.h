@@ -3,7 +3,8 @@
 
 #include <QMainWindow>
 #include <QMouseEvent>
-#include "drawer.h"
+#include "objects.h"
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -32,12 +33,27 @@ private slots:
 
   void mousePressEvent(QMouseEvent *event);
 
+  void on_video_clicked();
+
+  void on_add_flam_clicked();
+
+  void on_flam_x_selectionChanged();
+
+  void on_flam_y_selectionChanged();
+
+  void on_pushButton_3_clicked();
+
+  void on_pushButton_4_clicked();
+
+  void on_pushButton_5_clicked();
+
+  void time_measure();
 private:
   void text_edit_default();
   Ui::MainWindow *ui;
-  drawer s;
-  std::shared_ptr<QImage> _image;
-  bool flag = 0;
+  objects objs;
+  bool run = 0, paint = 0;
+  QTimer* timer;
 
 };
 #endif // MAINWINDOW_H
