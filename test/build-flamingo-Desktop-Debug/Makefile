@@ -40,7 +40,7 @@ DISTNAME      = flamingo1.0.0
 DISTDIR = /home/larisa/cg_course/test/build-flamingo-Desktop-Debug/.tmp/flamingo1.0.0
 LINK          = g++
 LFLAGS        = 
-LIBS          = $(SUBLIBS) /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Core.so -lGL -lpthread   
+LIBS          = $(SUBLIBS) -lgtest -lgtest_main /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Core.so -lGL -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -58,7 +58,8 @@ SOURCES       = ../flamingo/drawer.cpp \
 		../flamingo/mainwindow.cpp \
 		../flamingo/object.cpp \
 		../flamingo/objects.cpp \
-		../flamingo/polygon.cpp moc_mainwindow.cpp
+		../flamingo/polygon.cpp \
+		../flamingo/unit_tests.cpp moc_mainwindow.cpp
 OBJECTS       = drawer.o \
 		light.o \
 		main.o \
@@ -66,6 +67,7 @@ OBJECTS       = drawer.o \
 		object.o \
 		objects.o \
 		polygon.o \
+		unit_tests.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -150,13 +152,15 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../flamingo/mainwindow.h \
 		../flamingo/object.h \
 		../flamingo/objects.h \
-		../flamingo/polygon.h ../flamingo/drawer.cpp \
+		../flamingo/polygon.h \
+		../flamingo/unit_tests.h ../flamingo/drawer.cpp \
 		../flamingo/light.cpp \
 		../flamingo/main.cpp \
 		../flamingo/mainwindow.cpp \
 		../flamingo/object.cpp \
 		../flamingo/objects.cpp \
-		../flamingo/polygon.cpp
+		../flamingo/polygon.cpp \
+		../flamingo/unit_tests.cpp
 QMAKE_TARGET  = flamingo
 DESTDIR       = 
 TARGET        = flamingo
@@ -342,8 +346,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../flamingo/drawer.h ../flamingo/light.h ../flamingo/mainwindow.h ../flamingo/object.h ../flamingo/objects.h ../flamingo/polygon.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../flamingo/drawer.cpp ../flamingo/light.cpp ../flamingo/main.cpp ../flamingo/mainwindow.cpp ../flamingo/object.cpp ../flamingo/objects.cpp ../flamingo/polygon.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../flamingo/drawer.h ../flamingo/light.h ../flamingo/mainwindow.h ../flamingo/object.h ../flamingo/objects.h ../flamingo/polygon.h ../flamingo/unit_tests.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../flamingo/drawer.cpp ../flamingo/light.cpp ../flamingo/main.cpp ../flamingo/mainwindow.cpp ../flamingo/object.cpp ../flamingo/objects.cpp ../flamingo/polygon.cpp ../flamingo/unit_tests.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../flamingo/mainwindow.ui $(DISTDIR)/
 
 
@@ -434,7 +438,8 @@ mainwindow.o: ../flamingo/mainwindow.cpp ../flamingo/mainwindow.h \
 		../flamingo/polygon.h \
 		../flamingo/light.h \
 		../flamingo/drawer.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../flamingo/unit_tests.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../flamingo/mainwindow.cpp
 
 object.o: ../flamingo/object.cpp ../flamingo/object.h \
@@ -450,6 +455,14 @@ objects.o: ../flamingo/objects.cpp ../flamingo/objects.h \
 
 polygon.o: ../flamingo/polygon.cpp ../flamingo/polygon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o polygon.o ../flamingo/polygon.cpp
+
+unit_tests.o: ../flamingo/unit_tests.cpp ../flamingo/unit_tests.h \
+		../flamingo/objects.h \
+		../flamingo/object.h \
+		../flamingo/polygon.h \
+		../flamingo/light.h \
+		../flamingo/drawer.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o unit_tests.o ../flamingo/unit_tests.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

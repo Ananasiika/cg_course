@@ -3,11 +3,12 @@
 
 #define EPS 1e-8
 
-bool isInside(int x, int y, std::vector<QVector3D> &points);
+bool is_inside(int x, int y, std::vector<QVector3D> &points);
 double calculateZ(int x, int y, std::tuple<int, int, int, int> coef);
-std::tuple<int, int, int, int> planeCoef(std::vector<QVector3D> points);
+std::tuple<int, int, int, int> plane_coef(std::vector<QVector3D> points);
 
 drawer::drawer(size_t x, size_t y) : _sX(x), _sY(y) {
+    _buf.clear();
     for (size_t i = 0; i < x; i++) {
         std::vector<Cell> v;
         _buf.push_back(v);
@@ -48,7 +49,7 @@ std::tuple<int, int, int, int> drawer::border(std::vector<QVector3D> points) {
     return std::tuple<int, int, int, int>(ymax, ymin, xmax, xmin);
 }
 
-std::tuple<int, int, int, int> planeCoef(std::vector<QVector3D> points) {
+std::tuple<int, int, int, int> drawer::plane_coef(std::vector<QVector3D> points) {
     int x1 = points[0].x();
     int y1 = points[0].y();
     int z1 = points[0].z();
@@ -72,6 +73,7 @@ std::tuple<int, int, int, int> planeCoef(std::vector<QVector3D> points) {
 
 void drawer::setSize(size_t x, size_t y)
 {
+    _shadows.clear();
     _sX = x;
     _sY = y;
     _buf.clear();
@@ -103,11 +105,11 @@ void drawer::putShadowPolygon(std::vector<std::vector<double>> &zb, std::vector<
         return;
 
     std::tuple<int, int, int, int> bord = border(points);
-    std::tuple<int, int, int, int> coef = planeCoef(points);
+    std::tuple<int, int, int, int> coef = plane_coef(points);
 
     for (int i = std::get<3>(bord); i <= std::get<2>(bord); i++)
         for (int j = std::get<1>(bord); j <= std::get<0>(bord); j++) {
-            if (isInside(i, j, points)) {
+            if (is_inside(i, j, points)) {
                 double z = calculateZ(i, j, coef);
                 double light_dist = (QVector3D(i, j, z) - ls.get_pos()).length();
                 if (light_dist < zb[i][j]) {
@@ -131,9 +133,9 @@ void drawer::putShadowBuffer(std::vector<std::vector<double>> &zb, std::vector<o
     }
 }
 
-
 void drawer::reflect(std::vector<object> &objects)
 {
+    QVector3D N(0, 0, 1);
     for (size_t o = objects.size() - 1; o >= 1; o--)
     {
         std::vector<polygon> polygons = objects[o].get_polygons();
@@ -149,10 +151,10 @@ void drawer::reflect(std::vector<object> &objects)
         {
             std::vector<QVector3D> points = {poly.get_points()[0], poly.get_points()[1], poly.get_points()[2]};
             std::tuple<int, int, int, int> bord = border(points);
-            std::tuple<int, int, int, int> coef = planeCoef(points);
+            std::tuple<int, int, int, int> coef = plane_coef(points);
             for (int i = std::get<3>(bord); i <= std::get<2>(bord); i++)
                 for (int j = std::get<1>(bord); j <= std::get<0>(bord); j++)
-                    if (isInside(i, j, points)) {
+                    if (is_inside(i, j, points)) {
                         double z = calculateZ(i, j, coef);
                         if (((_buf[i][j + 2 * (y_max - j)].z == 0 && o >= 2 && j + 2 * (y_max - j) < _sY) || (o == 1 && _buf[i][j + z * 2].z == 0)))
                         {
@@ -167,6 +169,10 @@ void drawer::reflect(std::vector<object> &objects)
                             else
                                 _buf[i][j + 2 * (y_max - j)].c = c;
                         }
+//                      QVector3D r =  QVector3D(i, j + z, z) + 2 * QVector3D::dotProduct(N, QVector3D(i, j + z, z)) / QVector3D::dotProduct(N, N) * N;
+//                      if (_buf[r.x()][r.y()].z == 0 && r.y() < _sY)
+//                            _buf[r.x()][r.y()].c = c;
+
                     }
         }
     }
@@ -199,10 +205,10 @@ void drawer::shadows(std::vector<object> &objects, const std::vector<light> &ls)
                     std::tuple<int, int, int, int> bord = border(new_points);
                     for (int i = std::get<3>(bord); i <= std::get<2>(bord); i++)
                         for (int j = std::get<1>(bord); j <= std::get<0>(bord); j++)
-                            if (isInside(i, j, new_points) && (_buf[i][j].z == 0 || _buf[i][j].obj < o))
-                                 _buf[i][j].c.setRgb(_buf[i][j].c.red() + 10 ? (_buf[i][j].c.red() + 10 <= 255) : 255, \
-                                                     _buf[i][j].c.green() + 10 ? (_buf[i][j].c.green() + 10 <= 255) : 255, \
-                                                     _buf[i][j].c.blue() + 10 ? (_buf[i][j].c.blue() + 10 <= 255) : 255);
+                            if (is_inside(i, j, new_points) && (_buf[i][j].z == 0 || _buf[i][j].obj < o))
+                                 _buf[i][j].c = _buf[i][j].c.darker(200);/*_buf[i][j].c.red() + 1 ? (_buf[i][j].c.red() + 1 <= 255) : 255, \
+                                                     _buf[i][j].c.green() + 1 ? (_buf[i][j].c.green() + 1 <= 255) : 255, \
+                                                     _buf[i][j].c.blue() + 1 ? (_buf[i][j].c.blue() + 1 <= 255) : 255);*/
                 }
 }
 
@@ -244,7 +250,6 @@ void drawer::put_objects(std::vector<object> &objects, const std::vector<light> 
             future.wait();
         }
     }
-
     reflect(objects);
     shadows(objects, ls);
 }
@@ -300,7 +305,7 @@ double calculateZ(int x, int y, std::tuple<int, int, int, int> coef) {
     return z;
 }
 
-bool isInside(int x, int y, std::vector<QVector3D> &points) {
+bool drawer::is_inside(int x, int y, std::vector<QVector3D> &points) {
     if (points.size() < 3)
         return false;
 
@@ -323,7 +328,7 @@ void drawer::put_polygon(std::vector<QVector3D> &points,
     if (points.size() < 3)
         return;
 
-    std::tuple<int, int, int, int> coef = planeCoef(points);
+    std::tuple<int, int, int, int> coef = plane_coef(points);
     QVector3D N(std::get<0>(coef), std::get<1>(coef), std::get<2>(coef));
     N.normalize();
     if (QVector3D::dotProduct(N,QVector3D(0, 0, 5000)) < 0)
@@ -332,7 +337,7 @@ void drawer::put_polygon(std::vector<QVector3D> &points,
     std::tuple<int, int, int, int> bord = border(points);
     for (int i = std::get<3>(bord); i <= std::get<2>(bord); i++)
         for (int j = std::get<1>(bord); j <= std::get<0>(bord); j++) {
-            if (isInside(i, j, points)) {
+            if (is_inside(i, j, points)) {
                 double z = calculateZ(i, j, coef);
                 if (z > _buf[i][j].z) {
                     _buf[i][j].z = z;

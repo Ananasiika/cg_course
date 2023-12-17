@@ -1,5 +1,4 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
 #include <QMainWindow>
 #include <QMouseEvent>
@@ -56,4 +55,3 @@ private:
   QTimer* timer;
 
 };
-#endif // MAINWINDOW_H

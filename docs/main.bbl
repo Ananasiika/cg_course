@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \def\selectlanguageifdefined#1{
 \expandafter\ifx\csname date#1\endcsname\relax
 \else\language\csname l@#1\endcsname\fi}
@@ -71,5 +71,11 @@ Date and time utilities [Электронный ресурс]. ---
 \newblock Режим доступа:
   \url{https://docs.fileformat.com/ru/3d/obj/} (дата обращения:
   11.12.2023).
+
+\bibitem{ubuntu}
+\selectlanguageifdefined{english}
+Ubuntu 20.04.3 LTS (Focal Fossa) [Электронный ресурс]. ---
+\newblock Режим доступа: \url{https://releases.ubuntu.com/20.04/}
+  (дата обращения: 11.12.2023).
 
 \end{thebibliography}

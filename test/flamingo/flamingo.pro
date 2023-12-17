@@ -15,7 +15,8 @@ SOURCES += \
     mainwindow.cpp \
     object.cpp \
     objects.cpp \
-    polygon.cpp
+    polygon.cpp \
+    unit_tests.cpp
 
 HEADERS += \
     drawer.h \
@@ -23,12 +24,13 @@ HEADERS += \
     mainwindow.h \
     object.h \
     objects.h \
-    polygon.h
+    polygon.h \
+    unit_tests.h
 
 FORMS += \
     mainwindow.ui
-  
-LIBS += -lGL
+
+LIBS += -lgtest -lgtest_main
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -320,14 +320,15 @@ std::vector<polygon> objects::generate_lake()
 
 void objects::generate_plant()
 {
+    srand(time(NULL));
     std::vector<polygon> plant;
     for (int i = 0; i < 100 * density_plant; i++)
     {
-        int x = random() % 1050;
-        int y  = random() % 800 + 30;
-        int z1 = random() % 30 + 10;
-        int z2 = random() % 30 + 10;
-        int z3 = random() % 30 + 10;
+        int x = rand() % 1050;
+        int y  = rand() % 800 + 30;
+        int z1 = rand() % 30 + 10;
+        int z2 = rand() % 30 + 10;
+        int z3 = rand() % 30 + 10;
 
         QVector3D v1(x, y, 0);
         QVector3D v2(x + 10, y, 0);
@@ -369,12 +370,12 @@ std::shared_ptr<QImage> objects::draw()
     std::shared_ptr<QImage> image = std::make_shared<QImage>(
         _canvas_width, _canvas_height, QImage::Format_RGBA64);
 
-    zb.setSize(_canvas_width, _canvas_height);
-    zb.set_factors(_scat, _dif, _spec, _tran, _ref);
+    dr.setSize(_canvas_width, _canvas_height);
+    dr.set_factors(_scat, _dif, _spec, _tran, _ref);
 
-    zb.put_objects(_objects, _lights);
+    dr.put_objects(_objects, _lights);
 
-    zb.show(image);
+    dr.show(image);
 
     return image;
 }

@@ -1,5 +1,4 @@
-#ifndef OBJECT_H
-#define OBJECT_H
+#pragma once
 
 #include <polygon.h>
 #include <QColor>
@@ -20,5 +19,3 @@ private:
     std::vector<polygon> _polygons;
     QVector3D _center;
 };
-
-#endif // OBJECT_H

@@ -11,50 +11,49 @@ A level-1 auxiliary file: research.aux
 A level-1 auxiliary file: biblio.aux
 The style file: gost780u.bst
 Database file #1: biblio.bib
-Warning--I didn't find a database entry for "ubuntu"
 Warning--empty journal in kurov
 Warning--empty booktitle in roders
 Warning--empty booktitle in refl
 Warning--empty booktitle in angem
-You've used 9 entries,
+You've used 10 entries,
             2674 wiz_defined-function locations,
-            683 strings with 6611 characters,
-and the built_in function-call counts, 1718 in all, are:
-= -- 203
-> -- 21
+            685 strings with 6790 characters,
+and the built_in function-call counts, 1828 in all, are:
+= -- 214
+> -- 22
 < -- 4
-+ -- 13
++ -- 14
 - -- 4
-* -- 48
-:= -- 176
-add.period$ -- 24
-call.type$ -- 9
+* -- 49
+:= -- 187
+add.period$ -- 26
+call.type$ -- 10
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 105
-empty$ -- 223
+cite$ -- 14
+duplicate$ -- 112
+empty$ -- 239
 format.name$ -- 8
-if$ -- 461
+if$ -- 489
 int.to.chr$ -- 0
-int.to.str$ -- 9
+int.to.str$ -- 10
 missing$ -- 0
-newline$ -- 57
+newline$ -- 62
 num.names$ -- 8
-pop$ -- 67
+pop$ -- 73
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 53
+skip$ -- 55
 stack$ -- 0
 substring$ -- 12
-swap$ -- 54
+swap$ -- 57
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 4
 while$ -- 6
-width$ -- 10
-write$ -- 125
-(There were 5 warnings)
+width$ -- 12
+write$ -- 136
+(There were 4 warnings)

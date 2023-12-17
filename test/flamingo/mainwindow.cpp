@@ -25,7 +25,6 @@ MainWindow::MainWindow(QWidget *parent)
   const char *c_str = "/home/larisa/cg_course/flamingo.obj";
   if (!objs.load_file(c_str))
       return;
-
   text_edit_default();
 }
 
@@ -84,14 +83,13 @@ void MainWindow::text_edit_default() {
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    time_measure();
     if (!run && !paint)
     {
         paint = 1;
         objs.delete_lights();
-        light ls = light({800, 500, 800}, 0.5);
+        light ls = light({150, 500, 700}, 0.5);
         objs.add_light(ls);
-        objs.add_flamingo_coord(-120, -490);
+        objs.add_flamingo_coord(50, -220);
         objs.add_flamingo_coord(-240, -200);
         for (int j = 225; j < 226; j += 1)
         {
@@ -196,7 +194,7 @@ void MainWindow::on_pushButton_clicked()
     }
     if (checkCoord(qx) || checkCoord(qy) || checkCoord(qz))
         return;
-    light l = light({qx.toFloat(), qy.toFloat(), qz.toFloat()}, 0.1);
+    light l = light({qx.toFloat(), qy.toFloat(), qz.toFloat()}, 0.3);
     objs.add_light(l);
     std::shared_ptr<QImage> _image = objs.draw();
     QPixmap pixmap = QPixmap::fromImage(*_image);
@@ -270,14 +268,17 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
 void MainWindow::on_video_clicked()
 {
     objs.delete_lights();
-    light ls = light({800, 500, 800}, 0.5);
+    light ls = light({150, 500, 600}, 0.5);
     objs.add_light(ls);
+    //light ls1 = light({350, 800, 600}, 0.1);
+    //objs.add_light(ls1);
 
     if (!paint && !run)
     {
         objs.add_flamingo_coord(0, -490);
         objs.add_flamingo_coord(-120, -200);
     }
+    run = 1;
 
     int frameIndex = 150;
 
@@ -292,7 +293,6 @@ void MainWindow::on_video_clicked()
 
             for (size_t fi = 0; fi < objs.get_count_flamingos(); fi++)
                 objs.add_flamingo(frameIndex + objs.get_coord_flamingo(fi)[0], objs.get_coord_flamingo(fi)[1]);
-
             std::shared_ptr<QImage> _image = objs.draw();
             QPixmap pixmap = QPixmap::fromImage(*_image);
             ui->graphicsView->scene()->clear();
@@ -343,7 +343,7 @@ void MainWindow::on_pushButton_4_clicked()
 {
     objs.delete_plant();
     QString p = ui->plant->toPlainText();
-    if (checkCoef(p))
+    if (!checkCoef(p))
         return;
     objs.set_density_plant(p.toDouble());
     objs.generate_plant();

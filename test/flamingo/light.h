@@ -1,5 +1,4 @@
-#ifndef LIGHT_H
-#define LIGHT_H
+#pragma once
 
 #include <QColor>
 #include <QVector3D>
@@ -18,5 +17,3 @@ private:
     QVector3D _pos;
     double _intens;
 };
-
-#endif // LIGHT_H

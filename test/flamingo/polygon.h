@@ -1,5 +1,4 @@
-#ifndef POLYGON_H
-#define POLYGON_H
+#pragma once
 
 #include <QPainter>
 #include <QVector3D>
@@ -26,5 +25,3 @@ private:
     std::vector<int> _num;
     QColor _c = QColor(120, 255, 150);
 };
-
-#endif // POLYGON_H

@@ -1,5 +1,4 @@
-#ifndef OBJECTS_H
-#define OBJECTS_H
+#pragma once
 
 #include "object.h"
 #include "light.h"
@@ -10,9 +9,6 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-
-#define HEIGHT_SCREEN 800
-#define WIDTH_SCREEN 1200
 
 class objects
 {
@@ -50,7 +46,5 @@ private:
   int _canvas_height, _canvas_width;
   double density_plant = 0.5;
   double _scat = 0.2, _dif = 0.8, _spec = 0.5, _tran = 0, _ref = 1;
-  drawer zb;
+  drawer dr;
 };
-
-#endif // OBJECTS_H

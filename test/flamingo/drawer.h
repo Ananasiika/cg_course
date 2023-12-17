@@ -1,5 +1,4 @@
-#ifndef DRAWER_H
-#define DRAWER_H
+#pragma once
 
 #include "light.h"
 #include "object.h"
@@ -40,16 +39,15 @@ public:
     QColor calculateColor(int x, int y, double z, QVector3D N, const std::vector<light> ls, QColor c);
     void reset_zb(std::vector<std::vector<double>> &zb);
     void set_factors(double scat, double dif, double spec, double tran, double ref);
+    std::tuple<int, int, int, int> plane_coef(std::vector<QVector3D> points);
+    bool is_inside(int x, int y, std::vector<QVector3D> &points);
+    void reflect_point(int x, int y, double z);
 
 
 private:
     int f = 1;
-    int _sX, _sY, count_flamingo = 2;
+    int _sX = 1000, _sY = 1000;
     std::vector<std::vector<std::vector<double>>> _shadows;
     std::vector<std::vector<Cell>> _buf;
     double _scat, _dif, _spec, _tran, _ref;
 };
-
-
-
-#endif // drawer_H
