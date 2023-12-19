@@ -1,41 +1,41 @@
 \babel@toc {russian}{}\relax 
 \contentsline {chapter}{ВВЕДЕНИЕ}{5}{chapter*.2}%
 \contentsline {chapter}{\numberline {1.}Аналитическая часть}{6}{chapter.1}%
-\contentsline {section}{\numberline {1.1.}Описание объектов сцены}{6}{section.1.1}%
-\contentsline {section}{\numberline {1.2.}Формализация задачи}{6}{section.1.2}%
-\contentsline {section}{\numberline {1.3.}Требования к программному обеспечению}{7}{section.1.3}%
-\contentsline {section}{\numberline {1.4.}Обзор способов задания трехмерной модели}{8}{section.1.4}%
-\contentsline {section}{\numberline {1.5.}Способы задания поверхностных моделей}{9}{section.1.5}%
-\contentsline {section}{\numberline {1.6.}Анализ алгоритмов удаления невидимых линий и поверхностей}{10}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1.}Алгоритм, использующий $Z$-буфер}{10}{subsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.6.2.}Алгоритм Робертса}{11}{subsection.1.6.2}%
-\contentsline {subsection}{\numberline {1.6.3.}Алгоритм трассировки лучей}{12}{subsection.1.6.3}%
-\contentsline {subsection}{\numberline {1.6.4.}Алгоритм Варнока}{12}{subsection.1.6.4}%
-\contentsline {section}{\numberline {1.7.}Анализ алгоритмов закраски}{15}{section.1.7}%
-\contentsline {subsection}{\numberline {1.7.1.}Закраска Гуро}{15}{subsection.1.7.1}%
-\contentsline {subsection}{\numberline {1.7.2.}Закраска Фонга}{15}{subsection.1.7.2}%
-\contentsline {section}{\numberline {1.8.}Анализ алгоритмов построения теней}{16}{section.1.8}%
-\contentsline {section}{\numberline {1.9.}Анализ моделей освещения}{17}{section.1.9}%
-\contentsline {subsection}{\numberline {1.9.1.}Модель Ламберта}{18}{subsection.1.9.1}%
-\contentsline {subsection}{\numberline {1.9.2.}Модель Фонга}{18}{subsection.1.9.2}%
-\contentsline {section}{\numberline {1.10.}Визуализация ходьбы фламинго}{19}{section.1.10}%
-\contentsline {section}{\numberline {1.11.}Итоговый выбор алгоритмов}{20}{section.1.11}%
+\contentsline {section}{\numberline {1.1.}Формализация задачи}{6}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1.}Описание объектов сцены}{6}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2.}Формализация процесса создания видео}{6}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3.}Требования к программному обеспечению}{7}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2.}Обзор способов задания трехмерной модели}{8}{section.1.2}%
+\contentsline {section}{\numberline {1.3.}Способы задания поверхностных моделей}{9}{section.1.3}%
+\contentsline {section}{\numberline {1.4.}Анализ алгоритмов удаления невидимых линий и поверхностей}{10}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1.}Алгоритм, использующий $Z$-буфер}{10}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2.}Алгоритм Робертса}{11}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3.}Алгоритм трассировки лучей}{12}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.4.}Алгоритм Варнока}{12}{subsection.1.4.4}%
+\contentsline {section}{\numberline {1.5.}Анализ алгоритмов закраски}{15}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1.}Закраска Гуро}{15}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2.}Закраска Фонга}{15}{subsection.1.5.2}%
+\contentsline {section}{\numberline {1.6.}Анализ алгоритмов построения теней}{16}{section.1.6}%
+\contentsline {section}{\numberline {1.7.}Анализ моделей освещения}{17}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1.}Модель Ламберта}{18}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2.}Модель Фонга}{18}{subsection.1.7.2}%
+\contentsline {section}{\numberline {1.8.}Визуализация ходьбы фламинго}{19}{section.1.8}%
+\contentsline {section}{\numberline {1.9.}Вывод к аналитической части}{20}{section.1.9}%
 \contentsline {chapter}{\numberline {2.}Конструкторская часть}{21}{chapter.2}%
 \contentsline {section}{\numberline {2.1.}Описание структур данных}{21}{section.2.1}%
 \contentsline {section}{\numberline {2.2.}Общий алгоритм визуализации трехмерной сцены}{21}{section.2.2}%
 \contentsline {section}{\numberline {2.3.}Алгоритм, использующий z-буффер}{22}{section.2.3}%
 \contentsline {section}{\numberline {2.4.}Модификация алгоритма, использующего z-буффер, для нахождения теней}{24}{section.2.4}%
-\contentsline {section}{\numberline {2.5.}Алгоритм нахождения координаты z точки в полигоне}{25}{section.2.5}%
-\contentsline {section}{\numberline {2.6.}Алгоритм для отображения отражений}{25}{section.2.6}%
+\contentsline {section}{\numberline {2.5.}Алгоритм для отображения отражений}{25}{section.2.5}%
 \contentsline {chapter}{\numberline {3.}Технологическая часть}{28}{chapter.3}%
-\contentsline {section}{\numberline {3.1.}Выбор средств реализации}{28}{section.3.1}%
-\contentsline {section}{\numberline {3.2.}Графический интерфейс программы}{28}{section.3.2}%
-\contentsline {section}{\numberline {3.3.}Модульное тестирование}{29}{section.3.3}%
-\contentsline {section}{\numberline {3.4.}Примеры работы программы}{31}{section.3.4}%
-\contentsline {section}{\numberline {3.5.}Функциональное тестирование}{35}{section.3.5}%
-\contentsline {chapter}{\numberline {4.}Исследовательская часть}{36}{chapter.4}%
-\contentsline {section}{\numberline {4.1.}Технические характеристики}{36}{section.4.1}%
-\contentsline {section}{\numberline {4.2.}Время генерации кадра}{36}{section.4.2}%
-\contentsline {chapter}{ЗАКЛЮЧЕНИЕ}{40}{chapter*.21}%
-\contentsline {chapter}{Список использованных источников}{41}{Item.80}%
-\contentsline {chapter}{ПРИЛОЖЕНИЕ А}{42}{chapter*.22}%
+\contentsline {section}{\numberline {3.1.}Средства реализации}{28}{section.3.1}%
+\contentsline {section}{\numberline {3.2.}Описание структуры программы}{28}{section.3.2}%
+\contentsline {section}{\numberline {3.3.}Графический интерфейс программы}{29}{section.3.3}%
+\contentsline {section}{\numberline {3.4.}Модульное тестирование}{30}{section.3.4}%
+\contentsline {section}{\numberline {3.5.}Функциональное тестирование}{32}{section.3.5}%
+\contentsline {chapter}{\numberline {4.}Исследовательская часть}{38}{chapter.4}%
+\contentsline {section}{\numberline {4.1.}Технические характеристики}{38}{section.4.1}%
+\contentsline {section}{\numberline {4.2.}Время генерации кадра}{38}{section.4.2}%
+\contentsline {chapter}{ЗАКЛЮЧЕНИЕ}{43}{chapter*.23}%
+\contentsline {chapter}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}{44}{Item.85}%
+\contentsline {chapter}{ПРИЛОЖЕНИЕ А}{45}{chapter*.25}%

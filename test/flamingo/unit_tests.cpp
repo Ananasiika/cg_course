@@ -74,9 +74,9 @@ TEST(planeCoefTest, planeCoefTest1) {
 
 TEST(DrawerTest, PutShadowPolygonTest) {
     drawer dr;
-    std::vector<std::vector<double>> zb(100, std::vector<double>(100, INT_MIN));
+    std::vector<std::vector<double>> zb(100, std::vector<double>(100, INT_MAX));
     std::vector<QVector3D> points = {
-        QVector3D(0, 0, 0),
+        QVector3D(0, 1, 0),
         QVector3D(2, 1, 0),
         QVector3D(3, 5, 0)
     };
@@ -84,17 +84,17 @@ TEST(DrawerTest, PutShadowPolygonTest) {
 
     dr.putShadowPolygon(zb, points, ls);
 
-    EXPECT_EQ(zb[-1][0], std::numeric_limits<double>::max());
+    EXPECT_EQ(zb[0][0], INT_MAX);
     EXPECT_EQ(zb[2][1], (QVector3D(2, 1, 0) - ls.get_pos()).length());
-    EXPECT_EQ(zb[4][5], std::numeric_limits<double>::max());
+    EXPECT_EQ(zb[4][5], INT_MAX);
 }
 
 TEST(DrawerTest, PutShadowBufferTest) {
     drawer dr;
-    std::vector<std::vector<double>> zb(100, std::vector<double>(100, std::numeric_limits<double>::max()));
+    std::vector<std::vector<double>> zb(100, std::vector<double>(100, INT_MAX));
     std::vector<object> objects;
     objects.emplace_back();
-    polygon p(QVector3D(0, 0, 0), QVector3D(2, 1, 0), QVector3D(3, 5, 0));
+    polygon p(QVector3D(0, 1, 0), QVector3D(2, 1, 0), QVector3D(3, 5, 0));
     std::vector<polygon> polys;
     polys.push_back(p);
     objects.push_back(polys);
@@ -102,16 +102,16 @@ TEST(DrawerTest, PutShadowBufferTest) {
 
     dr.putShadowBuffer(zb, objects, ls);
 
-    EXPECT_EQ(zb[0][0], std::numeric_limits<double>::max());
+    EXPECT_EQ(zb[0][0], INT_MAX);
     EXPECT_EQ(zb[2][1], (QVector3D(2, 1, 0) - ls.get_pos()).length());
-    EXPECT_EQ(zb[3][5], std::numeric_limits<double>::max());
+    EXPECT_EQ(zb[4][5], INT_MAX);
 }
 
 TEST(isInsideTest, isInsideTest) {
     drawer dr;
     std::vector<QVector3D> points = {
         QVector3D(0, 0, 0),
-        QVector3D(2, 1, 0),
+        QVector3D(1, 2, 0),
         QVector3D(3, 5, 0)
     };
     int x = 1;

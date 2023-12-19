@@ -135,7 +135,7 @@ void drawer::putShadowBuffer(std::vector<std::vector<double>> &zb, std::vector<o
 
 void drawer::reflect(std::vector<object> &objects)
 {
-    QVector3D N(0, 0, 1);
+    //QVector3D N(0, 0, 1);
     for (size_t o = objects.size() - 1; o >= 1; o--)
     {
         std::vector<polygon> polygons = objects[o].get_polygons();
@@ -156,12 +156,14 @@ void drawer::reflect(std::vector<object> &objects)
                 for (int j = std::get<1>(bord); j <= std::get<0>(bord); j++)
                     if (is_inside(i, j, points)) {
                         double z = calculateZ(i, j, coef);
-                        if (((_buf[i][j + 2 * (y_max - j)].z == 0 && o >= 2 && j + 2 * (y_max - j) < _sY) || (o == 1 && _buf[i][j + z * 2].z == 0)))
+                        if ((o >= 2 && _buf[i][j + 2 * (y_max - j)].z == 0 && j + 2 * (y_max - j) < _sY - 1 && j + 2 * (y_max - j) > 0) || (o == 1 && _buf[i][j + z * 2].z == 0 && j + 2 * z < _sY - 1 && j + 2 * z > 0))
                         {
                             x = (points[0].x() + points[1].x() + points[2].x()) / 3;
                             y = (points[0].y() + points[1].y() + points[2].y()) / 3;
                             if (o == 1)
                                 y = std::fmax(points[1].y(), points[2].y()) - 2;
+                            if (x <= 0 || y <= 0 || x >= _sX - 1 || y >= _sY - 1)
+                                continue;
                             QColor c = getColorCell(x, y);
                             c.setAlpha(200);
                             if (o == 1)
@@ -182,34 +184,33 @@ void drawer::reflect(std::vector<object> &objects)
 
 void drawer::shadows(std::vector<object> &objects, const std::vector<light> &ls)
 {
-    double max_intens = 0;
-    for (size_t li = 0; li < ls.size(); li++)
-        if (ls[li].get_intensity() > max_intens)
-            max_intens = ls[li].get_intensity();
-    for (size_t li = 0; li < ls.size(); li++)
-        if (ls[li].get_intensity() == max_intens)
-            for (size_t o = 1; o < objects.size(); o++)
-                for (polygon& poly : objects[o].get_polygons())
-                {
-                    QVector3D *points = poly.get_points();
-                    std::vector<QVector3D> new_points;
-                    for (size_t i = 0; i < 3; i++)
-                    {
-                        QVector3D direction = ls[li].get_pos() - points[i];
-                        direction.normalize();
-                        float t = -points[i].z() / direction.z();
-                        QVector3D intersection = points[i] + t * direction;
-                        new_points.push_back(intersection);
-                    }
 
-                    std::tuple<int, int, int, int> bord = border(new_points);
-                    for (int i = std::get<3>(bord); i <= std::get<2>(bord); i++)
-                        for (int j = std::get<1>(bord); j <= std::get<0>(bord); j++)
-                            if (is_inside(i, j, new_points) && (_buf[i][j].z == 0 || _buf[i][j].obj < o))
-                                 _buf[i][j].c = _buf[i][j].c.darker(200);/*_buf[i][j].c.red() + 1 ? (_buf[i][j].c.red() + 1 <= 255) : 255, \
-                                                     _buf[i][j].c.green() + 1 ? (_buf[i][j].c.green() + 1 <= 255) : 255, \
-                                                     _buf[i][j].c.blue() + 1 ? (_buf[i][j].c.blue() + 1 <= 255) : 255);*/
+    for (size_t li = 0; li < ls.size(); li++)
+    {
+        double intens = ls[li].get_intensity();
+        for (size_t o = 1; o < objects.size(); o++)
+            for (polygon& poly : objects[o].get_polygons())
+            {
+                QVector3D *points = poly.get_points();
+                std::vector<QVector3D> new_points;
+                for (size_t i = 0; i < 3; i++)
+                {
+                    QVector3D direction = ls[li].get_pos() - points[i];
+                    direction.normalize();
+                    float t = -points[i].z() / direction.z();
+                    QVector3D intersection = points[i] + t * direction;
+                    new_points.push_back(intersection);
                 }
+
+                std::tuple<int, int, int, int> bord = border(new_points);
+                for (int i = std::get<3>(bord); i <= std::get<2>(bord); i++)
+                    for (int j = std::get<1>(bord); j <= std::get<0>(bord); j++)
+                        if (is_inside(i, j, new_points) && (_buf[i][j].z == 0 || _buf[i][j].obj < o))
+                             _buf[i][j].c = _buf[i][j].c.darker(150 + intens * 105);/*_buf[i][j].c.red() + 1 ? (_buf[i][j].c.red() + 1 <= 255) : 255, \
+                                                 _buf[i][j].c.green() + 1 ? (_buf[i][j].c.green() + 1 <= 255) : 255, \
+                                                 _buf[i][j].c.blue() + 1 ? (_buf[i][j].c.blue() + 1 <= 255) : 255);*/
+            }
+    }
 }
 
 void drawer::put_objects(std::vector<object> &objects, const std::vector<light> &ls)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.2)  17 DEC 2023 23:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.2)  20 DEC 2023 00:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1912,7 +1912,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./img/rpz-tit.pdf): PDF inclusion: foun
 d PDF version <1.7>, but at most version <1.5> allowed
-<img/rpz-tit.pdf, id=169, 597.53635pt x 845.04686pt>
+<img/rpz-tit.pdf, id=125, 597.53635pt x 845.04686pt>
 File: img/rpz-tit.pdf Graphic file (type pdf)
 <use img/rpz-tit.pdf>
 Package pdftex.def Info: img/rpz-tit.pdf  used on input line 2.
@@ -1933,7 +1933,7 @@ d PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: /usr/bin/pdflatex (file ./img/rpz-tit.pdf): PDF inclusion: foun
 d PDF version <1.7>, but at most version <1.5> allowed
-<img/rpz-tit.pdf, id=172, page=1, 597.53635pt x 845.04686pt>
+<img/rpz-tit.pdf, id=128, page=1, 597.53635pt x 845.04686pt>
 File: img/rpz-tit.pdf Graphic file (type pdf)
 <use img/rpz-tit.pdf, page 1>
 Package pdftex.def Info: img/rpz-tit.pdf , page1 used on input line 2.
@@ -1962,9 +1962,9 @@ Package pdftex.def Info: img/rpz-tit.pdf , page1 used on input line 2.
 
  (./contents.tex
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 2.
+(Font)              scaled to size 24.88pt on input line 3.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
-(Font)              scaled to size 24.88pt on input line 2.
+(Font)              scaled to size 24.88pt on input line 3.
  (./main.toc
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 2.
@@ -1988,13 +1988,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [4]
 \openout2 = `intro.aux'.
 
- (./intro.tex
-Overfull \hbox (2.15634pt too wide) in paragraph at lines 14--15
-[]\T2A/Tempora-TLF/m/n/14.4 исследовать за-ви-си-мость ско-ро-сти ге-не-ра-ции 
-кад-ра раз-ра-бо-тан-но-го про-
- []
-
-) [5
+ (./intro.tex) [5
 
 
 
@@ -2008,367 +2002,214 @@ LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
 (Font)              scaled to size 20.74pt on input line 5.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
 (Font)              scaled to size 20.74pt on input line 5.
+LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
+(Font)              scaled to size 17.28pt on input line 7.
+LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
+(Font)              scaled to size 17.28pt on input line 7.
 [6
 
 
 
 
 ]
-<img/idef0.pdf, id=277, 1080.035pt x 246.9225pt>
+Overfull \hbox (0.88866pt too wide) in paragraph at lines 29--30
+[]\T2A/Tempora-TLF/m/n/14.4 Формализованная по-ста-нов-ка за-да-чи со-зда-ния п
+о-сле-до-ва-тель-но-сти кад-
+ []
+
+<img/idef0.pdf, id=223, 1080.035pt x 270.00874pt>
 File: img/idef0.pdf Graphic file (type pdf)
 <use img/idef0.pdf>
-Package pdftex.def Info: img/idef0.pdf  used on input line 31.
-(pdftex.def)             Requested size: 469.47049pt x 107.33128pt.
- [7 <./img/idef0.pdf>] [8] [9]
-Overfull \hbox (5.68382pt too wide) in paragraph at lines 91--92
+Package pdftex.def Info: img/idef0.pdf  used on input line 33.
+(pdftex.def)             Requested size: 469.47049pt x 117.36632pt.
+[7 <./img/idef0.pdf>] [8] [9]
+Overfull \hbox (5.68382pt too wide) in paragraph at lines 93--94
 []\T2A/Tempora-TLF/m/n/14.4 Представленные да-лее ал-го-рит-мы ра-бо-та-ют в од
 -ном из двух про-странств:
  []
 
-LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 93.
-LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 93.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 93.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 93.
-
 [10] [11] [12]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 152.
+               Default added (so using `tbp') on input line 156.
 
 
-Overfull \hbox (8.56587pt too wide) in paragraph at lines 159--159
+Overfull \hbox (3.86658pt too wide) in paragraph at lines 163--163
 []\T2A/Tempora-TLF/m/n/14.4 Использующий
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--159
+Underfull \hbox (badness 10000) in paragraph at lines 163--163
 []\T2A/Tempora-TLF/m/n/14.4 Обратной
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--159
+Underfull \hbox (badness 10000) in paragraph at lines 163--163
 \T2A/Tempora-TLF/m/n/14.4 трас-си-ров-ки
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-[]\T2A/Tempora-TLF/m/n/14.4 Основная
- []
-
-
-Overfull \hbox (4.53389pt too wide) in paragraph at lines 161--161
-[]\T2A/Tempora-TLF/m/n/14.4 использование
- []
-
-
-Underfull \hbox (badness 1895) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 бу-фе-ра, хра-
- []
-
-
-Underfull \hbox (badness 6927) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 ня-ще-го глу-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-[]\T2A/Tempora-TLF/m/n/14.4 растеризация
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 по-ли-го-нов,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 по-пик-сель-но
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 срав-ни-ва-ет-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 ся глу-би-на
- []
-
-
-Underfull \hbox (badness 4634) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 по-ли-го-нов и
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-[]\T2A/Tempora-TLF/m/n/14.4 симуляция
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 фи-зи-че-ско-го
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 вза-и-мо-дей-
- []
-
-
-Underfull \hbox (badness 6364) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 ствия лу-чей
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 (от-ра-жа-ют-ся,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 пре-лом-ля-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 ют-ся или
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 по-гло-ща-ют-ся
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 в за-ви-си-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 мо-сти от
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--161
-\T2A/Tempora-TLF/m/n/14.4 свойств
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
-[]\T2A/Tempora-TLF/m/n/14.4 растеризация
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
-\T2A/Tempora-TLF/m/n/14.4 по-ли-го-нов,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
-\T2A/Tempora-TLF/m/n/14.4 рас-пре-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
-\T2A/Tempora-TLF/m/n/14.4 де-ля-ют-ся
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
-\T2A/Tempora-TLF/m/n/14.4 непро-зрач-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
-\T2A/Tempora-TLF/m/n/14.4 уда-лен-но-сти
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
-\T2A/Tempora-TLF/m/n/14.4 вы-пол-ня-ет-ся
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
-\T2A/Tempora-TLF/m/n/14.4 за-те-не-ние
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
-\T2A/Tempora-TLF/m/n/14.4 по-ли-го-нов
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
-\T2A/Tempora-TLF/m/n/14.4 в по-ряд-ке
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 []\T2A/Tempora-TLF/m/n/14.4 Вычислите-
  []
 
 
-Underfull \hbox (badness 2035) in paragraph at lines 163--164
+Underfull \hbox (badness 2035) in paragraph at lines 165--166
 \T2A/Tempora-TLF/m/n/14.4 ль-ная тру-до-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 \T2A/Tempora-TLF/m/n/14.4 объ-ек-тов,
  []
 
 
-Underfull \hbox (badness 6268) in paragraph at lines 163--164
-\T2A/Tempora-TLF/m/n/14.4 N - кол-во
+Underfull \hbox (badness 1226) in paragraph at lines 165--166
+\T2A/Tempora-TLF/m/n/14.4 N --- кол-во
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--166
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
 []\T2A/Tempora-TLF/m/n/14.4 Работает с
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 []\T2A/Tempora-TLF/m/n/14.4 Применение
  []
 
 
-Underfull \hbox (badness 4899) in paragraph at lines 170--170
+Underfull \hbox (badness 4899) in paragraph at lines 172--172
 \T2A/Tempora-TLF/m/n/14.4 для сцен в
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 \T2A/Tempora-TLF/m/n/14.4 ре-аль-ном
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 []\T2A/Tempora-TLF/m/n/14.4 может быть
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 \T2A/Tempora-TLF/m/n/14.4 эф-фек-тив-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 \T2A/Tempora-TLF/m/n/14.4 ным, но
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 \T2A/Tempora-TLF/m/n/14.4 по-треб-лять
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 1038) in paragraph at lines 172--172
+\T2A/Tempora-TLF/m/n/14.4 боль-ше па-мя-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 []\T2A/Tempora-TLF/m/n/14.4 используется,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 \T2A/Tempora-TLF/m/n/14.4 но мо-жет
  []
 
 
-Underfull \hbox (badness 1194) in paragraph at lines 170--170
+Underfull \hbox (badness 1194) in paragraph at lines 172--172
 \T2A/Tempora-TLF/m/n/14.4 быть не эф-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 \T2A/Tempora-TLF/m/n/14.4 фек-тив-ным
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 []\T2A/Tempora-TLF/m/n/14.4 обеспечивает
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 \T2A/Tempora-TLF/m/n/14.4 вы-со-кое
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 \T2A/Tempora-TLF/m/n/14.4 ка-че-ство
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 \T2A/Tempora-TLF/m/n/14.4 изоб-ра-же-ний,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 \T2A/Tempora-TLF/m/n/14.4 но мо-жет
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 \T2A/Tempora-TLF/m/n/14.4 быть бо-лее
  []
 
 
-Underfull \hbox (badness 2680) in paragraph at lines 170--170
+Underfull \hbox (badness 2680) in paragraph at lines 172--172
 \T2A/Tempora-TLF/m/n/14.4 вре-ме-ни для
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 \T2A/Tempora-TLF/m/n/14.4 рен-де-рин-га
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 []\T2A/Tempora-TLF/m/n/14.4 используется
  []
 
 
-Underfull \hbox (badness 7740) in paragraph at lines 170--171
+Underfull \hbox (badness 7740) in paragraph at lines 172--173
 \T2A/Tempora-TLF/m/n/14.4 и поз-во-ля-ет
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 \T2A/Tempora-TLF/m/n/14.4 об-ра-ба-ты-вать
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 \T2A/Tempora-TLF/m/n/14.4 боль-шие
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 \T2A/Tempora-TLF/m/n/14.4 эф-фек-тив-ной
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 \T2A/Tempora-TLF/m/n/14.4 од-но-крат-но-го
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 \T2A/Tempora-TLF/m/n/14.4 про-хо-да по
  []
 
 
-Overfull \hbox (13.03569pt too wide) in paragraph at lines 155--173
+Overfull \hbox (17.73499pt too wide) in paragraph at lines 159--175
 [][] 
  []
 
@@ -2383,7 +2224,7 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.305 \end{align*}
+l.307 \end{align*}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2405,7 +2246,7 @@ Overfull \hbox (11.27293pt too wide) in paragraph at lines 23--24
 
 
 ]
-<img/idef1.pdf, id=436, 1691.31876pt x 1309.89375pt>
+<img/idef1.pdf, id=392, 1691.31876pt x 1309.89375pt>
 File: img/idef1.pdf Graphic file (type pdf)
 <use img/idef1.pdf>
 Package pdftex.def Info: img/idef1.pdf  used on input line 33.
@@ -2414,7 +2255,7 @@ Package pdftex.def Info: img/idef1.pdf  used on input line 33.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./img/z.pdf): PDF inclusion: found PDF 
 version <1.7>, but at most version <1.5> allowed
-<img/z.pdf, id=438, 398.4486pt x 948.42331pt>
+<img/z.pdf, id=394, 398.4486pt x 948.42331pt>
 File: img/z.pdf Graphic file (type pdf)
 <use img/z.pdf>
 Package pdftex.def Info: img/z.pdf  used on input line 45.
@@ -2435,7 +2276,7 @@ Overfull \hbox (1.88512pt too wide) in paragraph at lines 53--54
 
 pdfTeX warning: /usr/bin/pdflatex (file ./img/z_mod.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<img/z_mod.pdf, id=461, 819.06pt x 934.45107pt>
+<img/z_mod.pdf, id=418, 819.06pt x 934.45107pt>
 File: img/z_mod.pdf Graphic file (type pdf)
 <use img/z_mod.pdf>
 Package pdftex.def Info: img/z_mod.pdf  used on input line 57.
@@ -2444,29 +2285,15 @@ Package pdftex.def Info: img/z_mod.pdf  used on input line 57.
 
  <./img/z_mod.pdf>]
 
-! Package amsmath Error: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.81 \end{align*}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-
 pdfTeX warning: /usr/bin/pdflatex (file ./img/reflect.pdf): PDF inclusion: foun
 d PDF version <1.7>, but at most version <1.5> allowed
-<img/reflect.pdf, id=482, 384.47638pt x 934.45107pt>
+<img/reflect.pdf, id=435, 384.47638pt x 934.45107pt>
 File: img/reflect.pdf Graphic file (type pdf)
 <use img/reflect.pdf>
-Package pdftex.def Info: img/reflect.pdf  used on input line 103.
+Package pdftex.def Info: img/reflect.pdf  used on input line 76.
 (pdftex.def)             Requested size: 291.0694pt x 707.4383pt.
 
-LaTeX Warning: Float too large for page by 3.20245pt on input line 106.
+LaTeX Warning: Float too large for page by 3.20245pt on input line 79.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -2493,51 +2320,65 @@ LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/it' will be
 
 ]
 
+pdfTeX warning: /usr/bin/pdflatex (file ./img/struct.pdf): PDF inclusion: found
+ PDF version <1.7>, but at most version <1.5> allowed
+<img/struct.pdf, id=477, 541.06137pt x 653.56169pt>
+File: img/struct.pdf Graphic file (type pdf)
+<use img/struct.pdf>
+Package pdftex.def Info: img/struct.pdf  used on input line 20.
+(pdftex.def)             Requested size: 422.52057pt x 510.39436pt.
+
+
 pdfTeX warning: /usr/bin/pdflatex (file ./img/inter.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<img/inter.pdf, id=527, 789.36287pt x 596.2275pt>
+<img/inter.pdf, id=479, 789.36287pt x 596.2275pt>
 File: img/inter.pdf Graphic file (type pdf)
 <use img/inter.pdf>
-Package pdftex.def Info: img/inter.pdf  used on input line 21.
-(pdftex.def)             Requested size: 422.52057pt x 319.14687pt.
+Package pdftex.def Info: img/inter.pdf  used on input line 31.
+(pdftex.def)             Requested size: 375.57782pt x 283.68408pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [29
 
- <./img/inter.pdf>]
+ <./img/struct.pdf>] [30 <./img/inter.pdf>]
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 34.
+(Font)              scaled to size 12.0pt on input line 47.
 LaTeX Font Info:    Trying to load font information for T2A+cmss on input line 
-34.
+47.
 
 (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmss.fd
 File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 35.
+(Font)              scaled to size 6.0pt on input line 48.
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-57.
+70.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [30
+) [31
+
+] [32
 
 ]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./img/ex1.pdf): PDF inclusion: found PD
 F version <1.7>, but at most version <1.5> allowed
-<img/ex1.pdf, id=574, 791.80026pt x 594.0087pt>
+<img/ex1.pdf, id=570, 843.15pt x 549.25201pt>
 File: img/ex1.pdf Graphic file (type pdf)
 <use img/ex1.pdf>
-Package pdftex.def Info: img/ex1.pdf  used on input line 98.
-(pdftex.def)             Requested size: 375.57782pt x 281.75824pt.
+Package pdftex.def Info: img/ex1.pdf  used on input line 131.
+(pdftex.def)             Requested size: 375.57782pt x 244.6636pt.
 
 
 pdfTeX warning: /usr/bin/pdflatex (file ./img/ex2.pdf): PDF inclusion: found PD
 F version <1.7>, but at most version <1.5> allowed
-<img/ex2.pdf, id=575, 791.80026pt x 594.0087pt>
+<img/ex2.pdf, id=571, 843.15pt x 549.25201pt>
 File: img/ex2.pdf Graphic file (type pdf)
 <use img/ex2.pdf>
-Package pdftex.def Info: img/ex2.pdf  used on input line 105.
-(pdftex.def)             Requested size: 422.52057pt x 316.98029pt.
+Package pdftex.def Info: img/ex2.pdf  used on input line 138.
+(pdftex.def)             Requested size: 422.52057pt x 275.24551pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -2545,11 +2386,11 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./img/ex3.pdf): PDF inclusion: found PD
 F version <1.7>, but at most version <1.5> allowed
-<img/ex3.pdf, id=576, 791.80026pt x 594.0087pt>
+<img/ex3.pdf, id=572, 843.15pt x 549.25201pt>
 File: img/ex3.pdf Graphic file (type pdf)
 <use img/ex3.pdf>
-Package pdftex.def Info: img/ex3.pdf  used on input line 112.
-(pdftex.def)             Requested size: 422.52057pt x 316.98029pt.
+Package pdftex.def Info: img/ex3.pdf  used on input line 145.
+(pdftex.def)             Requested size: 422.52057pt x 275.24551pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -2557,11 +2398,11 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./img/ex4.pdf): PDF inclusion: found PD
 F version <1.7>, but at most version <1.5> allowed
-<img/ex4.pdf, id=577, 791.80026pt x 594.0087pt>
+<img/ex4.pdf, id=573, 843.15pt x 549.25201pt>
 File: img/ex4.pdf Graphic file (type pdf)
 <use img/ex4.pdf>
-Package pdftex.def Info: img/ex4.pdf  used on input line 119.
-(pdftex.def)             Requested size: 422.52057pt x 316.98029pt.
+Package pdftex.def Info: img/ex4.pdf  used on input line 152.
+(pdftex.def)             Requested size: 422.52057pt x 275.24551pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -2569,11 +2410,11 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./img/ex5.pdf): PDF inclusion: found PD
 F version <1.7>, but at most version <1.5> allowed
-<img/ex5.pdf, id=578, 809.16592pt x 598.80855pt>
+<img/ex5.pdf, id=574, 843.15pt x 549.25201pt>
 File: img/ex5.pdf Graphic file (type pdf)
 <use img/ex5.pdf>
-Package pdftex.def Info: img/ex5.pdf  used on input line 126.
-(pdftex.def)             Requested size: 422.52057pt x 312.6797pt.
+Package pdftex.def Info: img/ex5.pdf  used on input line 159.
+(pdftex.def)             Requested size: 422.52057pt x 275.24551pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -2581,11 +2422,11 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./img/ex7.pdf): PDF inclusion: found PD
 F version <1.7>, but at most version <1.5> allowed
-<img/ex7.pdf, id=579, 791.80026pt x 594.0087pt>
+<img/ex7.pdf, id=575, 843.15pt x 549.25201pt>
 File: img/ex7.pdf Graphic file (type pdf)
 <use img/ex7.pdf>
-Package pdftex.def Info: img/ex7.pdf  used on input line 133.
-(pdftex.def)             Requested size: 422.52057pt x 316.98029pt.
+Package pdftex.def Info: img/ex7.pdf  used on input line 166.
+(pdftex.def)             Requested size: 422.52057pt x 275.24551pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -2593,35 +2434,16 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./img/ex6.pdf): PDF inclusion: found PD
 F version <1.7>, but at most version <1.5> allowed
-<img/ex6.pdf, id=580, 791.80026pt x 594.0087pt>
+<img/ex6.pdf, id=576, 843.15pt x 549.25201pt>
 File: img/ex6.pdf Graphic file (type pdf)
 <use img/ex6.pdf>
-Package pdftex.def Info: img/ex6.pdf  used on input line 140.
-(pdftex.def)             Requested size: 422.52057pt x 316.98029pt.
+Package pdftex.def Info: img/ex6.pdf  used on input line 173.
+(pdftex.def)             Requested size: 422.52057pt x 275.24551pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[31
-
- <./img/ex1.pdf>]
-
-LaTeX Warning: Text page 32 contains only floats.
-
-[32 <./img/ex2.pdf> <./img/ex3.pdf>]
-
-LaTeX Warning: Text page 33 contains only floats.
-
-[33 <./img/ex4.pdf> <./img/ex5.pdf>]
-
-LaTeX Warning: Text page 34 contains only floats.
-
-[34 <./img/ex7.pdf> <./img/ex6.pdf>]
-Overfull \hbox (5.4553pt too wide) in paragraph at lines 154--155
-[]\T2A/Tempora-TLF/m/n/14.4 можно за-дать несколь-ко ис-точ-ни-ков све-та, что 
-под-твер-жда-ет ри-су-нок []3.7[]; 
- []
-
-) [35
+[33 <./img/ex1.pdf>] [34 <./img/ex2.pdf> <./img/ex3.pdf>] [35 <./img/ex4.pdf> <
+./img/ex5.pdf>] [36 <./img/ex7.pdf> <./img/ex6.pdf>]) [37
 
 ]
 \openout2 = `research.aux'.
@@ -2637,52 +2459,59 @@ TLF.
 LaTeX Font Info:    Font shape `TS1/Tempora-TLF/m/n' will be
 (Font)              scaled to size 14.4pt on input line 12.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+Overfull \hbox (3.21445pt too wide) in paragraph at lines 32--32
+[]\T2A/Tempora-TLF/m/n/14.4 фламинго| 
+ []
 
 
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/flams.pdf): PDF inclusion: found 
-PDF version <1.7>, but at most version <1.5> allowed
-<img/flams.pdf, id=659, 683.55376pt x 487.8225pt>
-File: img/flams.pdf Graphic file (type pdf)
-<use img/flams.pdf>
-Package pdftex.def Info: img/flams.pdf  used on input line 103.
-(pdftex.def)             Requested size: 422.52057pt x 301.53871pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Overfull \hbox (3.21445pt too wide) in paragraph at lines 58--58
+[]\T2A/Tempora-TLF/m/n/14.4 фламинго| 
+ []
 
 
 
-pdfTeX warning: /usr/bin/pdflatex (file ./img/lights.pdf): PDF inclusion: found
- PDF version <1.7>, but at most version <1.5> allowed
-<img/lights.pdf, id=660, 683.55376pt x 487.8225pt>
-File: img/lights.pdf Graphic file (type pdf)
-<use img/lights.pdf>
-Package pdftex.def Info: img/lights.pdf  used on input line 110.
-(pdftex.def)             Requested size: 422.52057pt x 301.53871pt.
+pdfTeX warning: /usr/bin/pdflatex (file ./img/graph_3d.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<img/graph_3d.pdf, id=632, 590.205pt x 588.69937pt>
+File: img/graph_3d.pdf Graphic file (type pdf)
+<use img/graph_3d.pdf>
+Package pdftex.def Info: img/graph_3d.pdf  used on input line 79.
+(pdftex.def)             Requested size: 328.6279pt x 327.79198pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[36
+
+
+pdfTeX warning: /usr/bin/pdflatex (file ./img/graph_up.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+<img/graph_up.pdf, id=633, 554.07pt x 573.64313pt>
+File: img/graph_up.pdf Graphic file (type pdf)
+<use img/graph_up.pdf>
+Package pdftex.def Info: img/graph_up.pdf  used on input line 86.
+(pdftex.def)             Requested size: 281.68515pt x 291.63504pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[38
 
 
 
 
-]
+] [39] [40 <./img/graph_3d.pdf> <./img/graph_up.pdf>]
 
-LaTeX Warning: Text page 37 contains only floats.
+pdfTeX warning: /usr/bin/pdflatex (file ./img/appr.pdf): PDF inclusion: found P
+DF version <1.7>, but at most version <1.5> allowed
+<img/appr.pdf, id=665, 586.44093pt x 574.39594pt>
+File: img/appr.pdf Graphic file (type pdf)
+<use img/appr.pdf>
+Package pdftex.def Info: img/appr.pdf  used on input line 104.
+(pdftex.def)             Requested size: 352.10286pt x 344.86809pt.
+) [41
 
-[37 <./img/flams.pdf>] [38 <./img/lights.pdf>]) [39
-
-]
+ <./img/appr.pdf>] [42]
 \openout2 = `conclusion.aux'.
 
- (./conclusion.tex)
-[40
+ (./conclusion.tex) [43
 
 
 
@@ -2708,7 +2537,7 @@ Underfull \hbox (badness 2799) in paragraph at lines 77--80
  ubuntu . com / 20 . 04/$[] \T2A/Tempora-TLF/m/n/14.4 (дата обращения:
  []
 
-)) [41
+)) [44
 
 
 
@@ -2716,258 +2545,25 @@ Underfull \hbox (badness 2799) in paragraph at lines 77--80
 ]
 \openout2 = `appendix.aux'.
 
- (./appendix.tex
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/presentation.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-<img/presentation.pdf, id=710, 796.67719pt x 448.1309pt>
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf>
-Package pdftex.def Info: img/presentation.pdf  used on input line 3.
-(pdftex.def)             Requested size: 796.67525pt x 448.12979pt.
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/presentation.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf>
-Package pdftex.def Info: img/presentation.pdf  used on input line 3.
-(pdftex.def)             Requested size: 796.67525pt x 448.12979pt.
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/presentation.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/presentation.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-<img/presentation.pdf, id=713, page=1, 796.67719pt x 448.1309pt>
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 1>
-Package pdftex.def Info: img/presentation.pdf , page1 used on input line 3.
-(pdftex.def)             Requested size: 796.67525pt x 448.12979pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 1>
-Package pdftex.def Info: img/presentation.pdf , page1 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 1>
-Package pdftex.def Info: img/presentation.pdf , page1 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 1>
-Package pdftex.def Info: img/presentation.pdf , page1 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/presentation.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-<img/presentation.pdf, id=714, page=2, 796.67719pt x 448.1309pt>
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 2>
-Package pdftex.def Info: img/presentation.pdf , page2 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 2>
-Package pdftex.def Info: img/presentation.pdf , page2 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 1>
-Package pdftex.def Info: img/presentation.pdf , page1 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 2>
-Package pdftex.def Info: img/presentation.pdf , page2 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-[42
+ (./appendix.tex) [45
 
 
 
- <./img/presentation.pdf> <./img/presentation.pdf>]
 
-pdfTeX warning: /usr/bin/pdflatex (file ./img/presentation.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-<img/presentation.pdf, id=777, page=3, 796.67719pt x 448.1309pt>
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 3>
-Package pdftex.def Info: img/presentation.pdf , page3 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 3>
-Package pdftex.def Info: img/presentation.pdf , page3 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/presentation.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-<img/presentation.pdf, id=778, page=4, 796.67719pt x 448.1309pt>
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 4>
-Package pdftex.def Info: img/presentation.pdf , page4 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 4>
-Package pdftex.def Info: img/presentation.pdf , page4 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 3>
-Package pdftex.def Info: img/presentation.pdf , page3 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 4>
-Package pdftex.def Info: img/presentation.pdf , page4 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-[43 <./img/presentation.pdf> <./img/presentation.pdf>]
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/presentation.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-<img/presentation.pdf, id=783, page=5, 796.67719pt x 448.1309pt>
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 5>
-Package pdftex.def Info: img/presentation.pdf , page5 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 5>
-Package pdftex.def Info: img/presentation.pdf , page5 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/presentation.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-<img/presentation.pdf, id=784, page=6, 796.67719pt x 448.1309pt>
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 6>
-Package pdftex.def Info: img/presentation.pdf , page6 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 6>
-Package pdftex.def Info: img/presentation.pdf , page6 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 5>
-Package pdftex.def Info: img/presentation.pdf , page5 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 6>
-Package pdftex.def Info: img/presentation.pdf , page6 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-[44 <./img/presentation.pdf> <./img/presentation.pdf>]
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/presentation.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-<img/presentation.pdf, id=790, page=7, 796.67719pt x 448.1309pt>
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 7>
-Package pdftex.def Info: img/presentation.pdf , page7 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 7>
-Package pdftex.def Info: img/presentation.pdf , page7 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/presentation.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-<img/presentation.pdf, id=791, page=8, 796.67719pt x 448.1309pt>
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 8>
-Package pdftex.def Info: img/presentation.pdf , page8 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 8>
-Package pdftex.def Info: img/presentation.pdf , page8 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 7>
-Package pdftex.def Info: img/presentation.pdf , page7 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 8>
-Package pdftex.def Info: img/presentation.pdf , page8 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-[45 <./img/presentation.pdf> <./img/presentation.pdf>]
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/presentation.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-<img/presentation.pdf, id=796, page=9, 796.67719pt x 448.1309pt>
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 9>
-Package pdftex.def Info: img/presentation.pdf , page9 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 9>
-Package pdftex.def Info: img/presentation.pdf , page9 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/presentation.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-<img/presentation.pdf, id=797, page=10, 796.67719pt x 448.1309pt>
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 10>
-Package pdftex.def Info: img/presentation.pdf , page10 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 10>
-Package pdftex.def Info: img/presentation.pdf , page10 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 9>
-Package pdftex.def Info: img/presentation.pdf , page9 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 10>
-Package pdftex.def Info: img/presentation.pdf , page10 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-[46 <./img/presentation.pdf> <./img/presentation.pdf>]
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/presentation.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-<img/presentation.pdf, id=802, page=11, 796.67719pt x 448.1309pt>
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 11>
-Package pdftex.def Info: img/presentation.pdf , page11 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 11>
-Package pdftex.def Info: img/presentation.pdf , page11 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./img/presentation.pdf): PDF inclusion:
- found PDF version <1.7>, but at most version <1.5> allowed
-<img/presentation.pdf, id=803, page=12, 796.67719pt x 448.1309pt>
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 12>
-Package pdftex.def Info: img/presentation.pdf , page12 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 12>
-Package pdftex.def Info: img/presentation.pdf , page12 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 11>
-Package pdftex.def Info: img/presentation.pdf , page11 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-File: img/presentation.pdf Graphic file (type pdf)
-<use img/presentation.pdf, page 12>
-Package pdftex.def Info: img/presentation.pdf , page12 used on input line 3.
-(pdftex.def)             Requested size: 598.00484pt x 336.37769pt.
-[47 <./img/presentation.pdf> <./img/presentation.pdf>]) (./main.aux
-(./title.aux) (./contents.aux) (./intro.aux) (./analysis.aux) (./design.aux)
-(./implement.aux) (./research.aux) (./conclusion.aux) (./biblio.aux)
-(./appendix.aux))
+] (./main.aux (./title.aux) (./contents.aux)
+(./intro.aux) (./analysis.aux) (./design.aux) (./implement.aux) (./research.aux
+) (./conclusion.aux) (./biblio.aux) (./appendix.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 648E35104925DCB4EA88846F0506F238;10635.
+(rerunfilecheck)             Checksum: 89FF040916D2B6DD975AFC409042C439;7976.
  ) 
 Here is how much of TeX's memory you used:
- 42028 strings out of 479721
- 952161 string characters out of 5887697
- 1460069 words of memory out of 5000000
- 58898 multiletter control sequences out of 15000+600000
+ 41993 strings out of 479721
+ 950794 string characters out of 5887697
+ 1459950 words of memory out of 5000000
+ 58859 multiletter control sequences out of 15000+600000
  511438 words of font info for 75 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
- 106i,17n,99p,930b,1563s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 106i,17n,99p,1000b,1563s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/larisa/.texlive2021/texmf-var/fonts/pk/ljfour/lh/lh-t2a/latt1440.600p
 k>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/tempora/tmp_ac5xuc.enc} </home
 /larisa/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss1200.600pk> </ho
@@ -2983,10 +2579,10 @@ onts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmsy10.pfb>
-Output written on main.pdf (46 pages, 3340638 bytes).
+Output written on main.pdf (44 pages, 2172728 bytes).
 PDF statistics:
- 1013 PDF objects out of 1200 (max. 8388607)
- 741 compressed objects within 8 object streams
- 244 named destinations out of 1000 (max. 500000)
- 527 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 911 PDF objects out of 1000 (max. 8388607)
+ 689 compressed objects within 7 object streams
+ 248 named destinations out of 1000 (max. 500000)
+ 374 words of extra memory for PDF output out of 10000 (max. 10000000)
 

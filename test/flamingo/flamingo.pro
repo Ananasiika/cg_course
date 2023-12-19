@@ -1,8 +1,12 @@
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT += widgets
 
 CONFIG += c++11
+#QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage
+
+
+
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -30,7 +34,7 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
-LIBS += -lgtest -lgtest_main
+LIBS += -lgtest -lgtest_main #-lgcov --coverage
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -11,6 +11,8 @@ public:
     QVector3D get_pos();
     QVector3D get_pos() const;
     double get_intensity();
+    void set_intensity(double intensity);
+    void set_pos(QVector3D pos);
     double get_intensity() const;
 
 private:

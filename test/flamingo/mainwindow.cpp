@@ -83,17 +83,21 @@ void MainWindow::text_edit_default() {
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    if (!run && !paint)
+    //time_measure();
+    if (!run)
     {
-        paint = 1;
         objs.delete_lights();
         light ls = light({150, 500, 700}, 0.5);
         objs.add_light(ls);
-        objs.add_flamingo_coord(50, -220);
-        objs.add_flamingo_coord(-240, -200);
+        if (!paint)
+        {
+            objs.add_flamingo_coord(50, -220);
+            objs.add_flamingo_coord(-270, -200);
+        }
         for (int j = 225; j < 226; j += 1)
         {
-            objs.delete_objects();
+            objs.delete_plant();
+            objs.generate_plant();
 
             for (size_t fi = 0; fi < objs.get_count_flamingos(); fi++)
                 objs.add_flamingo(j + objs.get_coord_flamingo(fi)[0], objs.get_coord_flamingo(fi)[1]);
@@ -106,79 +110,53 @@ void MainWindow::on_pushButton_2_clicked()
             ui->graphicsView->scene()->render(&painter);
 
             scenePixmap.save(QString("../photos/screenshot_%1.png").arg(j));
-            paint = 1;
         }
+        paint = 1;
     }
 }
 
 void MainWindow::time_measure() {
     int iterations = 25;
-    std::cout << "Количество фламинго    Время" << std::endl;
     objs.delete_lights();
-    light ls = light({800, 500, 800}, 0.5);
-    objs.add_light(ls);
 
     std::chrono::time_point<std::chrono::system_clock> time_start, time_end;
     double res_time = 0;
     for (int o = 0; o < 15; o++)
         objs.add_flamingo_coord(o * 20 - 120, o * 20 - 490);
-    for (int i = 1; i < 15; i++)
+    for (int i = 10; i <= 10; i++)
     {
+        objs.delete_lights();
+        for (int k = 1; k <= i; k++)
+        {
+            light ls1 = light(QVector3D(float(300 + k * 10), float(300 + k * 20), 500), 0.1 * k - 0.05);
+            objs.add_light(ls1);
+        }
+        std::cout << i << " источник" << std::endl;
         objs.delete_objects();
-        for (int j = 0; j <= i; j++)
-            objs.add_flamingo(150 + objs.get_coord_flamingo(j)[0], objs.get_coord_flamingo(j)[1]);
-
-        for (int j = 0; j < iterations; j++)
+        for (int j = 1; j < 15; j++)
         {
-            time_start = std::chrono::system_clock::now();
+            objs.add_flamingo(150 + objs.get_coord_flamingo(j - 1)[0], objs.get_coord_flamingo(j - 1)[1]);
 
-            std::shared_ptr<QImage> _image = objs.draw();
-            QPixmap pixmap = QPixmap::fromImage(*_image);
-            ui->graphicsView->scene()->clear();
-            ui->graphicsView->scene()->addPixmap(pixmap);
+            for (int j = 0; j < iterations; j++)
+            {
+                time_start = std::chrono::system_clock::now();
+
+                std::shared_ptr<QImage> _image = objs.draw();
+                QPixmap pixmap = QPixmap::fromImage(*_image);
+                ui->graphicsView->scene()->clear();
+                ui->graphicsView->scene()->addPixmap(pixmap);
 
 
-            time_end = std::chrono::system_clock::now();
+                time_end = std::chrono::system_clock::now();
 
-            res_time += (std::chrono::duration_cast<std::chrono::milliseconds>
-            (time_end - time_start).count());
+                res_time += (std::chrono::duration_cast<std::chrono::milliseconds>
+                (time_end - time_start).count());
+            }
+
+            res_time /= iterations;
+            // std::cout << i << "   " << res_time << std::endl;
+            std::cout  << res_time << ", " << std::endl;
         }
-
-        res_time /= iterations;
-        // std::cout << i << "   " << res_time << std::endl;
-        std::cout  << res_time << ", " << std::endl;
-    }
-
-    std::cout << "Количество источников    Время" << std::endl;
-    objs.delete_lights();
-    objs.delete_objects();
-
-    for (int i = 1; i <= 2; i++)
-    {
-        objs.add_flamingo(150 + objs.get_coord_flamingo(i)[0], objs.get_coord_flamingo(i)[1]);
-    }
-    for (int i = 1; i <= 10; i ++)
-    {
-        light ls1 = light(QVector3D(float(300 + i * 10), float(300 + i * 20), 500), 0.1 * i - 0.05);
-        objs.add_light(ls1);
-        for (int j = 0; j < iterations; j++)
-        {
-            time_start = std::chrono::system_clock::now();
-
-            std::shared_ptr<QImage> _image = objs.draw();
-            QPixmap pixmap = QPixmap::fromImage(*_image);
-            ui->graphicsView->scene()->clear();
-            ui->graphicsView->scene()->addPixmap(pixmap);
-
-            time_end = std::chrono::system_clock::now();
-
-            res_time += (std::chrono::duration_cast<std::chrono::milliseconds>
-            (time_end - time_start).count());
-        }
-
-        res_time /= iterations;
-        // std::cout << i << "   " << res_time << std::endl;
-        std::cout  << res_time << ", " << std::endl;
     }
 }
 
@@ -268,10 +246,14 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
 void MainWindow::on_video_clicked()
 {
     objs.delete_lights();
-    light ls = light({150, 500, 600}, 0.5);
+    light ls = light({350, 500, 600}, 0.5);
     objs.add_light(ls);
-    //light ls1 = light({350, 800, 600}, 0.1);
-    //objs.add_light(ls1);
+    objs.delete_objects();
+    objs.generate_plant();
+//    light ls1 = light({100, 100, 600}, 0.1);
+//    objs.add_light(ls1);
+//    light ls2 = light({100, 300, 600}, 0.1);
+//    objs.add_light(ls2);
 
     if (!paint && !run)
     {
@@ -342,6 +324,7 @@ void MainWindow::on_pushButton_3_clicked()
 void MainWindow::on_pushButton_4_clicked()
 {
     objs.delete_plant();
+    objs.generate_plant();
     QString p = ui->plant->toPlainText();
     if (!checkCoef(p))
         return;
@@ -362,5 +345,53 @@ void MainWindow::on_pushButton_5_clicked()
             (ref != "" && !checkCoef(ref)))
         return;
     objs.set_factors(scat, dif, spec, tran, ref);
+}
+
+
+void MainWindow::on_up_clicked()
+{
+    objs.move(0, -5, 1);
+    if (run)
+        objs.move_plant(0, -5, 1);
+}
+
+
+void MainWindow::on_left_clicked()
+{
+    objs.move(-5, 0, 1);
+    if (run)
+        objs.move_plant(-5, 0, 1);
+}
+
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    objs.move(5, 0, 1);
+    if (run)
+        objs.move_plant(5, 0, 1);
+}
+
+
+void MainWindow::on_down_clicked()
+{
+    objs.move(0, 5, 1);
+    if (run)
+        objs.move_plant(0, 5, 1);
+}
+
+
+void MainWindow::on_increase_clicked()
+{
+    objs.move(0, 0, 1.2);
+    if (run)
+        objs.move_plant(0, 0, 1.2);
+}
+
+
+void MainWindow::on_decrease_clicked()
+{
+    objs.move(0, 0, 0.9);
+    if (run)
+        objs.move_plant(0, 0, 0.9);
 }
 

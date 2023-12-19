@@ -28,6 +28,20 @@ void objects::delete_plant()
         _objects.pop_back();
 }
 
+void objects::move_plant(int x, int y, double k)
+{
+    if (_objects.size() == 0)
+        return;
+    std::vector<polygon> polys = _objects[1].get_polygons();
+    for (size_t i = 0; i < polys.size(); i++)
+    {
+        QVector3D *points = polys[i].get_points();
+        QColor color = polys[i].get_color();
+        polys[i] = polygon((points[0] + QVector3D(x, y, 0)) * k, (points[1] + QVector3D(x, y, 0)) * k, (points[2] + QVector3D(x, y, 0)) * k, color);
+    }
+    _objects[1].set_polygons(polys);
+}
+
 void objects::set_density_plant(double density) {
     density_plant = density;
 }
@@ -46,6 +60,14 @@ void objects::set_size(size_t width, size_t height)
 {
     _canvas_height = height;
     _canvas_width = width;
+}
+
+void objects::move(int x, int y, double k)
+{
+    x_tran += x;
+    y_tran += y;
+    coef_tran *= k;
+
 }
 
 void objects::set_factors(QString scat, QString dif, QString spec, QString tran, QString ref)
@@ -197,10 +219,18 @@ void add_polygons(std::vector<polygon> &polygons, std::vector<QVector3D> &vertic
         qDebug() << a[2];*/
 }
 
-QVector3D rotatePoint(const QVector3D& point)
+QVector3D objects::translatePoint(const QVector3D& point)
 {
-    return point - QVector3D(0, point.z(), 0);
+    QVector3D new_point = (point - QVector3D(0, 2 * point.z(), 0) + QVector3D(x_tran, y_tran, 0)) * coef_tran;
+    return new_point;
 }
+
+QVector3D translatePointPlant(const QVector3D& point, int x, int y)
+{
+    QVector3D new_point = point - QVector3D(0, point.z(), 0);
+    return new_point;
+}
+
 
 bool compareBySecondColumn(const std::vector<float>& a, const std::vector<float>& b) {
     return a[1] < b[1];
@@ -235,7 +265,7 @@ void objects::add_flamingo(float x, float y)
         for (size_t i = 0; i < 3; i++)
         {
             vs[i] += QVector3D(x, -y, 0);
-            vs[i] = rotatePoint(vs[i]);
+            vs[i] = translatePoint(vs[i]);
         }
         QColor color = poly.get_color();
         std::vector<QVector3D> points = {vs[0], vs[1], vs[2]};
@@ -286,7 +316,7 @@ bool objects::load_file(const char *filename)
         tokenize(s, ' ', out);
 
         if (out[0] == "v")
-            verticies.push_back(QVector3D(stod(out[1]) * 2 * 0.6, 0.6 * (stod(out[2]) - stod(out[3])), 0.6 * stod(out[3])));
+            verticies.push_back(QVector3D(stod(out[1]) * 2 * 0.6, 0.6 * stod(out[2]), 0.6 * stod(out[3])));
         if (out[0] == "usemtl")
         {
             color_cur = colors[i++];
@@ -300,7 +330,6 @@ bool objects::load_file(const char *filename)
     flamingo = object(polygons, verticies[0]);
     f.close();
     _objects.push_back(object(generate_lake()));
-    generate_plant();
     return 1;
 }
 
@@ -320,12 +349,12 @@ std::vector<polygon> objects::generate_lake()
 
 void objects::generate_plant()
 {
-    srand(time(NULL));
+    //srand(time(NULL));
     std::vector<polygon> plant;
-    for (int i = 0; i < 100 * density_plant; i++)
+    for (int i = 0; i < 150 * density_plant; i++)
     {
-        int x = rand() % 1050;
-        int y  = rand() % 800 + 30;
+        int x = rand() % 1500;
+        int y  = rand() % 1200 + 30;
         int z1 = rand() % 30 + 10;
         int z2 = rand() % 30 + 10;
         int z3 = rand() % 30 + 10;
@@ -341,9 +370,22 @@ void objects::generate_plant()
         QVector3D v8(x + 12, y - 8, 0);
         QVector3D v9(x + 20, y - 8, 0);
 
-        QVector3D v10(x + 4, y - 4 - z1, z1);
-        QVector3D v11(x + 12, y - 4 - z2, z2);
-        QVector3D v12(x + 20, y - 4 - z3, z3);
+        QVector3D v10(x + 4, y - 4, z1);
+        QVector3D v11(x + 12, y - 4, z2);
+        QVector3D v12(x + 20, y - 4, z3);
+        v1 = translatePointPlant(v1, x_tran, y_tran);
+        v2 = translatePointPlant(v2, x_tran, y_tran);
+        v3 = translatePointPlant(v3, x_tran, y_tran);
+        v4 = translatePointPlant(v4, x_tran, y_tran);
+        v5 = translatePointPlant(v5, x_tran, y_tran);
+        v6 = translatePointPlant(v6, x_tran, y_tran);
+        v7 = translatePointPlant(v7, x_tran, y_tran);
+        v8 = translatePointPlant(v8, x_tran, y_tran);
+        v9 = translatePointPlant(v9, x_tran, y_tran);
+        v10 = translatePointPlant(v10, x_tran, y_tran);
+        v11 = translatePointPlant(v11, x_tran, y_tran);
+        v12 = translatePointPlant(v12, x_tran, y_tran);
+
         QColor color(Qt::green);
         color.setAlpha(255 * (1 - _tran));
         plant.push_back(polygon(v1, v2, v7, color));

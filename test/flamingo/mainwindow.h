@@ -47,6 +47,18 @@ private slots:
   void on_pushButton_5_clicked();
 
   void time_measure();
+  void on_up_clicked();
+
+  void on_left_clicked();
+
+  void on_pushButton_7_clicked();
+
+  void on_down_clicked();
+
+  void on_increase_clicked();
+
+  void on_decrease_clicked();
+
 private:
   void text_edit_default();
   Ui::MainWindow *ui;

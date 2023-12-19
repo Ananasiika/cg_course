@@ -19,6 +19,8 @@ public:
     std::vector<int> get_num();
     QColor get_color();
     QColor get_color() const;
+    void set_color(QColor c);
+    void set_points(QVector3D *points);
 
 private:
     QVector3D _points[SIZE];

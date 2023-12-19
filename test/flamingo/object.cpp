@@ -10,4 +10,6 @@ object::object(std::vector<polygon> polygons)
 
 std::vector<polygon> object::get_polygons() { return _polygons; }
 
+void object::set_polygons(std::vector<polygon> polys) { _polygons = polys; }
+
 QVector3D object::get_center() { return _center; }
