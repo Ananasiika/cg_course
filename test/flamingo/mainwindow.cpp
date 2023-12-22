@@ -120,6 +120,7 @@ void MainWindow::time_measure() {
     objs.delete_lights();
 
     std::chrono::time_point<std::chrono::system_clock> time_start, time_end;
+
     double res_time = 0;
     for (int o = 0; o < 15; o++)
         objs.add_flamingo_coord(o * 20 - 120, o * 20 - 490);
